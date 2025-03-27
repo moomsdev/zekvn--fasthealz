@@ -1,0 +1,27 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixin' as *;
+
+header {
+  .col-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .sublogo {
+      max-width: 4rem;
+      height: auto;
+    }
+
+    .logo {
+      max-width: 21rem;
+    }
+
+    .slogan {
+      max-width: 10rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $primaryColor;
+    }
+
+  }
+}
