@@ -5,14 +5,16 @@
         <div class="row product-lists">
             <div class="col-md-12 col-xl-4 product-item">
                 <a href="#" class="product-image">
-                    <img src="<?php bloginfo('template_url' ); ?>/images/bg-product.png" alt="Product image">
+                    <img src="https://placehold.co/321x321" alt="Placeholder Image">
                     <button class="btn btn-primary product-addcart">
                         <i class="fa-solid fa-cart-shopping product-addcart__icon"></i>
                         Thêm vào giỏ
                     </button>
                     <div class="product-addcart__overlay"></div>
                 </a>
-                <div class="product-title">Gel mờ sẹo Fasthealz Scar Kid</div>
+                <h3 class="product-title">
+                    <a href="#">Gel mờ sẹo Fasthealz Scar Kid</a>
+                </h3>
                 <div class="product-description">
                     Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
                 </div>
@@ -25,14 +27,16 @@
             </div>
             <div class="col-md-12 col-xl-4 product-item">
                 <a href="#" class="product-image">
-                    <img src="<?php bloginfo('template_url' ); ?>/images/bg-product.png" alt="Product image">
+                    <img src="https://placehold.co/321x321" alt="Placeholder Image">
                     <button class="btn btn-primary product-addcart">
                         <i class="fa-solid fa-cart-shopping product-addcart__icon"></i>
                         Thêm vào giỏ
                     </button>
                     <div class="product-addcart__overlay"></div>
                 </a>
-                <div class="product-title">Gel mờ sẹo Fasthealz Scar Kid</div>
+                <h3 class="product-title">
+                    <a href="#">Gel mờ sẹo Fasthealz Scar Kid</a>
+                </h3>
                 <div class="product-description">
                     Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
                 </div>
@@ -45,14 +49,16 @@
             </div>
             <div class="col-md-12 col-xl-4 product-item">
                 <a href="#" class="product-image">
-                    <img src="<?php bloginfo('template_url' ); ?>/images/bg-product.png" alt="Product image">
+                    <img src="https://placehold.co/321x321" alt="Placeholder Image">
                     <button class="btn btn-primary product-addcart">
                         <i class="fa-solid fa-cart-shopping product-addcart__icon"></i>
                         Thêm vào giỏ
                     </button>
                     <div class="product-addcart__overlay"></div>
                 </a>
-                <div class="product-title">Gel mờ sẹo Fasthealz Scar Kid</div>
+                <h3 class="product-title">
+                    <a href="#">Gel mờ sẹo Fasthealz Scar Kid</a>
+                </h3>
                 <div class="product-description">
                     Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
                 </div>
@@ -68,14 +74,16 @@
         <div class="row product-lists">
             <div class="col-md-12 col-xl-4 product-item">
                 <a href="#" class="product-image">
-                    <img src="<?php bloginfo('template_url' ); ?>/images/bg-product.png" alt="Product image">
+                    <img src="https://placehold.co/321x321" alt="Placeholder Image">
                     <button class="btn btn-primary product-addcart">
                         <i class="fa-solid fa-cart-shopping product-addcart__icon"></i>
                         Thêm vào giỏ
                     </button>
                     <div class="product-addcart__overlay"></div>
                 </a>
-                <div class="product-title">Gel mờ sẹo Fasthealz Scar Kid</div>
+                <h3 class="product-title">
+                    <a href="#">Gel mờ sẹo Fasthealz Scar Kid</a>
+                </h3>
                 <div class="product-description">
                     Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
                 </div>
@@ -88,14 +96,16 @@
             </div>
             <div class="col-md-12 col-xl-4 product-item">
                 <a href="#" class="product-image">
-                    <img src="<?php bloginfo('template_url' ); ?>/images/bg-product.png" alt="Product image">
+                    <img src="https://placehold.co/321x321" alt="Placeholder Image">
                     <button class="btn btn-primary product-addcart">
                         <i class="fa-solid fa-cart-shopping product-addcart__icon"></i>
                         Thêm vào giỏ
                     </button>
                     <div class="product-addcart__overlay"></div>
                 </a>
-                <div class="product-title">Gel mờ sẹo Fasthealz Scar Kid</div>
+                <h3 class="product-title">
+                    <a href="#">Gel mờ sẹo Fasthealz Scar Kid</a>
+                </h3>
                 <div class="product-description">
                     Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
                 </div>
@@ -108,14 +118,16 @@
             </div>
             <div class="col-md-12 col-xl-4 product-item">
                 <a href="#" class="product-image">
-                    <img src="<?php bloginfo('template_url' ); ?>/images/bg-product.png" alt="Product image">
+                    <img src="https://placehold.co/321x321" alt="Placeholder Image">
                     <button class="btn btn-primary product-addcart">
                         <i class="fa-solid fa-cart-shopping product-addcart__icon"></i>
                         Thêm vào giỏ
                     </button>
                     <div class="product-addcart__overlay"></div>
                 </a>
-                <div class="product-title">Gel mờ sẹo Fasthealz Scar Kid</div>
+                <h3 class="product-title">
+                    <a href="#">Gel mờ sẹo Fasthealz Scar Kid</a>
+                </h3>
                 <div class="product-description">
                     Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
                 </div>
@@ -130,4 +142,3 @@
     </div>
 </main>
 <?php get_footer(); ?>
- 

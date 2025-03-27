@@ -24,33 +24,10 @@
   }
 
   &:hover {
-    &.product-addcart,
-    &.product-addcart__overlay {
+    .product-addcart,
+    .product-addcart__overlay {
       opacity: 1;
     }
-  }
-}
-
-.product-addcart {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: .8rem 1.6rem;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
-  line-height: 1.2;
-  text-align: center;
-  border-radius: 1rem;
-  color: #fff;
-  background-color: $orangeColor;
-  border: none;
-  outline: none;
-  z-index: 1;
-  opacity: 0;
-  transition: all 0.5s linear;
-
-  &:hover {
-    background-color: $orangeColor;
   }
 }
 
@@ -77,6 +54,10 @@
   line-height: 1;
   text-align: center;
   color: $greyColor;
+
+  a:hover {
+    color: $primaryColor;
+  }
 }
 
 .product-description {
