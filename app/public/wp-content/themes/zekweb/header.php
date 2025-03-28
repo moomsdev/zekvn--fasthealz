@@ -102,6 +102,12 @@
 					</div>
 				</div>
 			</div>
+
+			<section class="section-banner">
+				<figure class="media">
+					<img src="<?= get_field('banner_home', 'option') ?>" alt="">
+				</figure>
+			</section>
 		</header>
 
 		<div id="menu-mobile">
