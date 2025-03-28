@@ -1,0 +1,8 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixin' as *;
+
+.health-blog {
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}

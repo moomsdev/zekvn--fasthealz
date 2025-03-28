@@ -12,11 +12,11 @@
                     </button>
                     <div class="product-addcart__overlay"></div>
                 </a>
-                <h3 class="product-title">
+                <h3 class="title multi-line-2">
                     <a href="#">Gel mờ sẹo Fasthealz Scar Kid</a>
                 </h3>
-                <div class="product-description">
-                    Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
+                <div class="description multi-line-3">
+                    Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
                 </div>
                 <div class="product-bottom">
                     <div class="product-price">165.000đ</div>
@@ -34,11 +34,11 @@
                     </button>
                     <div class="product-addcart__overlay"></div>
                 </a>
-                <h3 class="product-title">
+                <h3 class="title multi-line-2">
                     <a href="#">Gel mờ sẹo Fasthealz Scar Kid</a>
                 </h3>
-                <div class="product-description">
-                    Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
+                <div class="description multi-line-3">
+                    Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
                 </div>
                 <div class="product-bottom">
                     <div class="product-price">165.000đ</div>
@@ -56,11 +56,11 @@
                     </button>
                     <div class="product-addcart__overlay"></div>
                 </a>
-                <h3 class="product-title">
+                <h3 class="title multi-line-2">
                     <a href="#">Gel mờ sẹo Fasthealz Scar Kid</a>
                 </h3>
-                <div class="product-description">
-                    Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
+                <div class="description multi-line-3">
+                    Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
                 </div>
                 <div class="product-bottom">
                     <div class="product-price">165.000đ</div>
@@ -81,11 +81,11 @@
                     </button>
                     <div class="product-addcart__overlay"></div>
                 </a>
-                <h3 class="product-title">
+                <h3 class="title multi-line-2">
                     <a href="#">Gel mờ sẹo Fasthealz Scar Kid</a>
                 </h3>
-                <div class="product-description">
-                    Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
+                <div class="description multi-line-3">
+                    Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
                 </div>
                 <div class="product-bottom">
                     <div class="product-price">165.000đ</div>
@@ -103,11 +103,11 @@
                     </button>
                     <div class="product-addcart__overlay"></div>
                 </a>
-                <h3 class="product-title">
+                <h3 class="title multi-line-2">
                     <a href="#">Gel mờ sẹo Fasthealz Scar Kid</a>
                 </h3>
-                <div class="product-description">
-                    Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
+                <div class="description multi-line-3">
+                    Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
                 </div>
                 <div class="product-bottom">
                     <div class="product-price">165.000đ</div>
@@ -125,11 +125,11 @@
                     </button>
                     <div class="product-addcart__overlay"></div>
                 </a>
-                <h3 class="product-title">
+                <h3 class="title multi-line-2">
                     <a href="#">Gel mờ sẹo Fasthealz Scar Kid</a>
                 </h3>
-                <div class="product-description">
-                    Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
+                <div class="description multi-line-3">
+                    Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả Mô tả, Mô tả, Mô tả, Mô tả, Mô tả, Mô tả,
                 </div>
                 <div class="product-bottom">
                     <div class="product-price">165.000đ</div>

@@ -1,0 +1,8 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixin' as *;
+
+.health-detail__item {
+    &:nth-child(n+3) {
+        margin-top: 3rem;
+    }
+}
