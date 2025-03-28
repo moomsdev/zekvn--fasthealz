@@ -1,2 +1,55 @@
 @use '../utilities/variables' as *;
 @use '../utilities/mixin' as *;
+
+.bg-color {
+  background-color: #f5f5f5;
+}
+
+.text-primary {
+  color: $primaryColor;
+}
+
+.mb-3r {
+  margin-bottom: 6rem;
+}
+
+.review {
+  padding: 50px 0;
+}
+
+.btn-home {
+    display: inline-block;
+    text-align: center;
+    border-radius: 1.9rem;
+    background-color: $primaryColor;
+
+    a {
+        display: block;
+        font-size: 2.4rem;
+        padding: 0.4rem 3rem;
+        font-style: italic;
+        color: #fff;
+    }
+}
+
+.home-blogs {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 550px;
+    margin-top: 2rem;
+
+    .description {
+        width: 90%;
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        border-radius: 0px;
+        background-color: #D9D9D9;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 0px;
+    }
+}
