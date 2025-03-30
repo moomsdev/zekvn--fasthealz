@@ -1,12 +1,13 @@
+@use './components/_video';
 @use './components/_button';
-@use './components/_pagination';
 @use './components/_sidebar';
+@use './components/_pagination';
 
-@use './layout/_general';
 @use './layout/_header';
 @use './layout/_footer';
+@use './layout/_general';
+@use './layout/homepage';
 @use './layout/_point_of_sale';
 @use './layout/_archive-product';
-@use './layout/homepage';
 @use './layout/_page-healthnews';
 @use './layout/_page-healthdetail';

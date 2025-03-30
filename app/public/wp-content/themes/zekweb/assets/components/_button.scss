@@ -60,3 +60,44 @@
       margin-left: .5rem;
     }
   }
+
+  .add_to_cart_button,
+  .buy-now-button {
+    padding: .8rem 1rem;
+    width: 100%;
+    min-width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    font-weight: 600;
+    line-height: 1;
+    color: #fff;
+    border-radius: 1rem;
+
+    &:hover {
+      color: #fff;
+      opacity: 0.8;
+    }
+
+    @include mediaMaxWidth(992px) {
+      min-width: unset;
+      text-align: center;
+    }
+  }
+
+  .add_to_cart_button {
+    background-color: $primaryColor;
+  }
+
+  .buy-now-button {
+    width: fit-content;
+    background-color: $orangeColor;
+
+    img {
+      width: 100%;
+      max-width: 2.8rem;
+      height: auto;
+    }
+  }

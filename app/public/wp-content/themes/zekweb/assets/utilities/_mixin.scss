@@ -138,3 +138,12 @@
   mask-size: contain;
   cursor: pointer;
 }
+
+@mixin limitLine($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

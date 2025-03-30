@@ -155,3 +155,39 @@ section {
     }
 }
 
+// section 3 - products
+.section-products {
+  .product-item {
+    .product-image {
+      border-radius: 3rem;
+      overflow: hidden;
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+    
+    .product-title {
+      
+      padding: 3.5rem 1rem 1.5rem 1rem;
+      font-size: clamp(2.4rem, 2.5vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: $greyColor;
+
+      &:hover {
+        color: $primaryColor;
+      }
+
+      @include mediaMaxWidth(992px) {
+        padding: 1.2rem 1rem 0;
+      }
+    }
+
+    .product-price {
+      margin-bottom: clamp(1.5rem, 2.5vw, 2rem);
+    }
+  }
+}
