@@ -25,7 +25,7 @@ if ($post_slider):
         endif;
         ?>
         <!-- Swiper wrapper container -->
-        <div class="swiper-wrapper-container">
+        <div class="swiper-wrapper-container position-relative">
           <div class="swiper swiper-posts">
             <div class="swiper-wrapper">
               <?php

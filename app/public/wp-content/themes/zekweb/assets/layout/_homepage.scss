@@ -207,8 +207,49 @@ section {
 }
 
 // section 6 - post slider
-.swiper-posts {
+.slider {
+  .swiper-wrapper-container {
 
+    .swiper-button-prev,
+    .swiper-button-next {
+      padding: 5px;
+      top: 30%;      
+      width: clamp(2.4rem, 2.5vw, 4rem);
+      height: clamp(2.4rem, 2.5vw, 4rem);
+      border-radius: 50%;
+      background: $primaryColor;
+
+      &::after {
+        font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+
+    .swiper-button-prev {
+      left: -6%;
+    }
+
+    .swiper-button-next {
+      right: -6%;
+    }
+
+    @include mediaMaxWidth(575px) {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+
+      .swiper-button-prev {
+        left: -2%;
+      }
+  
+      .swiper-button-next {
+        right: -2%;
+      }
+    }
+  }
+}
+
+.swiper-posts {
   figure {
     border-radius: 2rem;
     overflow: hidden;
@@ -216,10 +257,5 @@ section {
     img {
       aspect-ratio: 16 / 16;
     }
-  }
-
-
-  .swiper-button-prev,
-  .swiper-button-next {
   }
 }
