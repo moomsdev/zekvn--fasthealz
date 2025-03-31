@@ -157,4 +157,30 @@
             }
         },
     });
+
+    // Swiper slider posts
+    var swiper = new Swiper(".swiper-posts", {
+        loop: true,
+        autoplay: {
+            delay: 6000,
+        },
+        speed: 500,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            575: {
+                slidesPerView: 2,
+                spaceBetween: 80,
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 80,
+            }
+        },
+    });
 })(jQuery);

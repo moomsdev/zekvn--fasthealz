@@ -1,9 +1,5 @@
 <?php
   $feature = get_field('section1', 'option');
-  // $title = $feature['title'];
-  // $icon = $feature['icon'];
-  // $description = $feature['description'];
-  // $button = $feature['button'];
 ?>
 
 <section class="section-feature">

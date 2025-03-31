@@ -5,111 +5,36 @@
 ?>
 <?php get_header(); ?>
 <main id="main">
-    <div class="review bg-color">
-        <div class="container">
-            <h3 class="title text-primary text-uppercase">Khách hàng đánh giá về Fasthealz</h3>
-            <div class="row align-items-end mb-3r">
-                <div class="col-md-12 col-xl-6">
-                    <img src="https://placehold.co/506x506" alt="Placeholder Image" class="image">
-                </div>
-                <div class="col-md-12 col-xl-6">
-                    <div class="row g-5">
-                        <div class="col-md-12 col-xl-6">
-                            <img src="https://placehold.co/238x239" alt="Placeholder Image" class="image">
-                        </div>
-                        <div class="col-md-12 col-xl-6">
-                            <img src="https://placehold.co/238x239" alt="Placeholder Image" class="image">
-                        </div>
-                        <div class="col-md-12 col-xl-6">
-                            <img src="https://placehold.co/238x239" alt="Placeholder Image" class="image">
-                        </div>
-                        <div class="col-md-12 col-xl-6">
-                            <img src="https://placehold.co/238x239" alt="Placeholder Image" class="image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-xl-4">
-                    <div class="profile">
-                        <img src="https://placehold.co/259x258" alt="Placeholder Image" class="image rounded-circle">
-                        <h3 class="title">Bé mochi</h3>
-                        <div class="description text-center multi-line-4">
-                            Mỗi lần dùng con thích lắm, mà mẹ cũng yên tâm. Em xịt chống hăm không màu, không mùi, không nhờn dính nên mẹ dễ dàng vệ sinh
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-xl-4">
-                    <div class="profile">
-                        <img src="https://placehold.co/259x258" alt="Placeholder Image" class="image rounded-circle">
-                        <h3 class="title">Bé mochi</h3>
-                        <div class="description text-center multi-line-4">
-                            Mỗi lần dùng con thích lắm, mà mẹ cũng yên tâm. Em xịt chống hăm không màu, không mùi, không nhờn dính nên mẹ dễ dàng vệ sinh
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-xl-4">
-                    <div class="profile">
-                        <img src="https://placehold.co/259x258" alt="Placeholder Image" class="image rounded-circle">
-                        <h3 class="title">Bé mochi</h3>
-                        <div class="description text-center multi-line-4">
-                            Mỗi lần dùng con thích lắm, mà mẹ cũng yên tâm. Em xịt chống hăm không màu, không mùi, không nhờn dính nên mẹ dễ dàng vệ sinh
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="slider mb-5">
-        <div class="container">
-            <h3 class="title text-primary text-uppercase">ứng dụng nổi bật của fasthealz</h3>
-            <div class="description text-center">
-                Trong y tế và đời sống
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-xl-4">
-                    <img src="https://placehold.co/320x239" alt="Placeholder Image" class="image mb-3">
-                    <h3 class="title multi-line-1">Tiêu đề Tiêu đề Tiêu đề Tiêu đề</h3>
-                    <div class="description multi-line-3">Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả</div>
-                </div>
-                <div class="col-md-12 col-xl-4">
-                    <img src="https://placehold.co/320x239" alt="Placeholder Image" class="image mb-3">
-                    <h3 class="title multi-line-1">Tiêu đề Tiêu đề Tiêu đề Tiêu đề</h3>
-                    <div class="description multi-line-3">Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả</div>
-                </div>
-                <div class="col-md-12 col-xl-4">
-                    <img src="https://placehold.co/320x239" alt="Placeholder Image" class="image mb-3">
-                    <h3 class="title multi-line-1">Tiêu đề Tiêu đề Tiêu đề Tiêu đề</h3>
-                    <div class="description multi-line-3">Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="slider mb-5">
-        <div class="container">
-            <h3 class="title text-primary text-uppercase">octenidine - chất sát khuẩn hàng đầu châu âu</h3>
-            <div class="description text-center">
-                Trong y tế và đời sống
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-xl-4">
-                    <img src="https://placehold.co/320x239" alt="Placeholder Image" class="image mb-3">
-                    <h3 class="title multi-line-1">Tiêu đề Tiêu đề Tiêu đề Tiêu đề</h3>
-                    <div class="description multi-line-3">Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả</div>
-                </div>
-                <div class="col-md-12 col-xl-4">
-                    <img src="https://placehold.co/320x239" alt="Placeholder Image" class="image mb-3">
-                    <h3 class="title multi-line-1">Tiêu đề Tiêu đề Tiêu đề Tiêu đề</h3>
-                    <div class="description multi-line-3">Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả</div>
-                </div>
-                <div class="col-md-12 col-xl-4">
-                    <img src="https://placehold.co/320x239" alt="Placeholder Image" class="image mb-3">
-                    <h3 class="title multi-line-1">Tiêu đề Tiêu đề Tiêu đề Tiêu đề</h3>
-                    <div class="description multi-line-3">Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả Mô tả</div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <?php
+    // Section 1
+    get_template_part('template-parts/home/section', 'feature');
+
+    // Section 2
+    echo get_template_part('template-parts/home/section', 'about');
+
+    // Section 3
+    get_template_part('template-parts/home/section', 'products');
+
+    // Section 4
+    get_template_part('template-parts/home/section', 'banner');
+
+    // Section 5
+    get_template_part('template-parts/home/section', 'testimonials');
+
+    // Section 6
+    get_template_part('template-parts/home/section', 'post_slider');
+
+    // Section 7
+    get_template_part('template-parts/home/section', 'latest_posts');
+
+    // Section 8
+    get_template_part('template-parts/home/section', 'partners');
+
+    // Section 9
+    get_template_part('template-parts/home/section', 'video'); 
+  ?>
+
+   
     <div class="slider mb-5">
         <div class="container">
             <h3 class="title text-primary text-uppercase">bằng chứng khoa học</h3>

@@ -193,17 +193,33 @@ section {
 }
 
 // section 5 - testimonials
-.review {
-  .swiper-testimonials {
-    padding-bottom: 3rem;
+.swiper-testimonials {
+  padding-bottom: 3rem;
 
-    .swiper-pagination {
-      bottom: 0;
+  .swiper-pagination {
+    bottom: 0;
 
-      .swiper-pagination-bullet {
-        width: clamp(1.5rem, 2.5vw, 2.4rem);
-        height: clamp(1.5rem, 2.5vw, 2.4rem);
-      }
+    .swiper-pagination-bullet {
+      width: clamp(1.5rem, 2.5vw, 2.4rem);
+      height: clamp(1.5rem, 2.5vw, 2.4rem);
     }
+  }
+}
+
+// section 6 - post slider
+.swiper-posts {
+
+  figure {
+    border-radius: 2rem;
+    overflow: hidden;
+
+    img {
+      aspect-ratio: 16 / 16;
+    }
+  }
+
+
+  .swiper-button-prev,
+  .swiper-button-next {
   }
 }
