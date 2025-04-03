@@ -45,8 +45,15 @@ if ( $product->is_in_stock() ) : ?>
 
 		do_action( 'woocommerce_after_add_to_cart_quantity' );
 		?>
+		<?php
+		$checkout_url = wc_get_checkout_url();
+		$buy_now_url = add_query_arg(['add-to-cart' => $product->get_id(), 'buy_now' => '1'], $checkout_url );
+		?>
+		<a href="<?php echo esc_url($buy_now_url); ?>" class="buy-now-button single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>">
+			<img src="<?php bloginfo('template_url' ); ?>/images/buy-now.png" alt="buy-now"> <?php echo esc_html( 'Mua ngay' ); ?>
+		</a>
 
-		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="yellow-color single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"> <i class="fa-solid fa-cart-shopping"></i> <?php echo esc_html( 'Thêm vào giỏ' ); ?></button>
 
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</form>

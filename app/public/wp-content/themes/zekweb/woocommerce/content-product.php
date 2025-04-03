@@ -24,12 +24,39 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<div <?php wc_product_class( 'item-product', $product ); ?>>
-	<div class="img">
-		<a href="<?php the_permalink()?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('large', array('alt'   => trim(strip_tags( $post->post_title )),'title' => trim(strip_tags( $post->post_title )),)); ?></a>
-	</div>
-	<div class="info">
-		<h3 class="name"><a href="<?php the_permalink()?>"><?php the_title(); ?></a></h3>
-		<?php wc_get_template( 'loop/price.php' ); ?>
-	</div>
+<div class="col-6 col-md-4 mb-5" <?php wc_product_class( 'product-item', $product ); ?>>
+		<div class="product-image">
+			<?php the_post_thumbnail('large', array('alt'   => trim(strip_tags( $post->post_title )),'title' => trim(strip_tags( $post->post_title )),)); ?>
+			<?php $product_id = $product->get_id(); ?>
+			<a href="?add-to-cart=<?php echo $product_id; ?>" 
+				data-quantity="1" 
+				class="button add_to_cart_button ajax_add_to_cart custom-add-to-cart" 
+				data-product_id="<?php echo $product_id; ?>" 
+				data-product_sku="<?php echo $product->get_sku(); ?>" 
+				aria-label="Thêm sản phẩm vào giỏ hàng" 
+				rel="nofollow">
+				<i class="fa-solid fa-cart-shopping product-addcart__icon"></i> Thêm vào giỏ
+			</a>
+				
+			<div class="product-addcart__overlay"></div>
+		</div>
+		<h3 class="title multi-line-2">
+				<a href="<?php the_permalink()?>"><?php the_title(); ?></a>
+		</h3>
+	
+		<?php
+			$manual_excerpt = get_post_field('post_excerpt', get_the_ID());
+			if ( !empty( $manual_excerpt ) ) {
+				echo '<div class="description multi-line-3">';
+					echo  $manual_excerpt;
+				echo '</div>';
+			}
+		?>
+		
+		<div class="product-bottom flex-wrap flex-lg-nowrap">
+				<div class="product-price"><?php echo $product->get_price_html(); ?></div>
+				<a href="<?php the_permalink()?>">
+					<button class="btn btn-primary product-looknow">Xem ngay</button>
+				</a>
+		</div>
 </div>

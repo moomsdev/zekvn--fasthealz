@@ -60,6 +60,10 @@ bdi::selection {
   background-color: $primaryColor;
 }
 
+.zek-web a:hover {
+  color: $primaryColor;
+}
+
 h1,
 h2,
 h3,
@@ -118,7 +122,8 @@ p:empty {
   @include limitLine(4);
 }
 
-.heading {
+.heading,
+.woocommerce-products-header__title.page-title {
   margin-bottom: 3rem;
   font-size: clamp(2.4rem, 2.5vw, 3.2rem);
   font-weight: 700;
@@ -132,10 +137,18 @@ p:empty {
   font-weight: 700;
   text-transform: uppercase;
   color: $orangeColor;
+
+  a {
+    color: $orangeColor;
+
+    &:hover {
+      color: $primaryColor !important;
+    }
+  }
 }
 
 .title {
-  margin: 4rem auto 0px auto;
+  margin: 0 auto 2rem;
   margin-bottom: 2rem;
   width: 80%;
   font-size: clamp(2.4rem, 2.5vw, 3.2rem);
@@ -175,4 +188,57 @@ figure {
     object-fit: cover;
     object-position: center;
   }
+}
+
+.page-body {
+  padding-bottom: 4rem;
+}
+
+.title-orange {
+  margin-bottom: 2rem;
+  font-size: clamp(2.4rem, 3vw, 3.2rem);
+  font-weight: 700;
+  color: $orangeColor;
+}
+
+.orange-color {
+  color: $orangeColor;
+}
+
+.detail-head .single_add_to_cart_button.yellow-color {
+  background-color: $yellowColor !important;
+}
+
+
+.single-product {
+  .detail-body {
+    img {
+      width: auto;
+    }
+  }
+
+  .price {
+    span.woocommerce-Price-amount,
+    span.woocommerce-Price-currencySymbol {
+      font-size: clamp(2rem, 2.5vw, 4rem);
+      color: $orangeColor;
+    }
+
+    span {
+      color: #000;
+      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+      font-weight: 600;
+    }
+  }
+
+  .detail-head a.button {
+    height: auto;
+    padding: .85rem;
+  }
+
+  
+}
+
+.pagination {
+  padding: 2rem 0 0;
 }

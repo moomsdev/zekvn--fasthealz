@@ -21,7 +21,7 @@
         ?>
       </div>
 
-      <div class="col-12 col-lg-6">
+      <div class="col-12 col-lg-6 mt-5 mt-lg-0">
         <?php
           if ($title) :
             echo '<h2 class="title text-primary text-uppercase">' . esc_html($title) . '</h2>';

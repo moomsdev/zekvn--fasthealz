@@ -18,13 +18,13 @@
         echo '<h2 class="title text-primary text-uppercase">' . esc_html($title) . '</h2>';
       endif;
     ?>
-      <div class="row">
+      <div class="row justify-content-center">
         <?php
         $loop = new WP_Query($args);
         if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post();
           global $product;
         ?>
-          <div class="col-12 col-md-4 product-item">
+          <div class="col-6 col-md-4 product-item woocommerce">
               <div class="product-image">
                 <figure>
                   <a href="<?= $product->get_permalink(); ?>">
@@ -43,17 +43,17 @@
                 </div>
               </div>
 
-              <div class="action d-flex gap-2">
+              <div class="action d-flex flex-wrap flex-lg-nowrap gap-2">
                 <!-- Add to cart -->
                 <?php $product_id = $product->get_id(); ?>
                 <a href="?add-to-cart=<?php echo $product_id; ?>" 
                   data-quantity="1" 
-                  class="button add_to_cart_button ajax_add_to_cart custom-add-to-cart" 
+                  class="button product_type_simple  add_to_cart_button ajax_add_to_cart custom-add-to-cart" 
                   data-product_id="<?php echo $product_id; ?>" 
                   data-product_sku="<?php echo $product->get_sku(); ?>" 
                   aria-label="Thêm sản phẩm vào giỏ hàng" 
                   rel="nofollow">
-                  <i class="fa fa-shopping-cart"></i> Thêm vào giỏ
+                  <i class="fa-solid fa-cart-shopping product-addcart__icon"></i> Thêm vào giỏ
                 </a>
                 <!-- Buy now -->
                 <?php

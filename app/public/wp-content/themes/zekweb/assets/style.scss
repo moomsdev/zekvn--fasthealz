@@ -2,12 +2,16 @@
 @use './components/_button';
 @use './components/_sidebar';
 @use './components/_pagination';
-
+@use './components/_breadcrumb';
+@use './components/_loop-post';
+@use './layout/_faq';
+@use './layout/_quickbuy';
 @use './layout/_header';
 @use './layout/_footer';
 @use './layout/_general';
 @use './layout/homepage';
 @use './layout/_point_of_sale';
 @use './layout/_archive-product';
+@use './layout/_single-product';
 @use './layout/_page-healthnews';
 @use './layout/_page-healthdetail';

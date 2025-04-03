@@ -41,3 +41,22 @@ if ( $rating_count > 0 ) : ?>
 	</div>
 
 <?php endif; ?>
+
+<div class="head-rating d-flex flex-wrap gap-5">
+	<div class="rating">
+
+		<?php echo do_shortcode('[cusrev_reviews_rating]'); ?>
+	</div>
+
+	<div class="qtt-reviews">
+	</div>
+
+	<div class="product-sales">
+		<!-- get product sales -->
+		<?php
+		$product_sales = get_post_meta( $product->get_id(), '_total_sales', true );
+		$product_sales = $product_sales ? $product_sales : 0;
+		?>
+		<span><?php echo $product_sales; ?> sản phẩm đã bán</span>
+	</div>
+</div>

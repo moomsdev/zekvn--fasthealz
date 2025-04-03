@@ -1,0 +1,26 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixin' as *;
+
+.breadcrumbs {
+  width: calc(100vw - 3px);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-bottom: 4rem;
+  background-color: #F6F6F6;
+  padding: 1.5rem 0;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  a,
+  span {
+    margin-right: 1.3rem;
+    color: $primaryColor;
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    font-weight: 600;
+  }
+}

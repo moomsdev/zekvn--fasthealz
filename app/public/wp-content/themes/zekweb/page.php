@@ -4,7 +4,14 @@
     <?php get_template_part('breadcrums'); ?>
     <div class="page-body">
         <div class="container">
-            <h1 class="page-title"><?php the_title();?></h1>
+            <h1 class="page-title orange-color"><?php the_title();?></h1>
+            <?php if (has_post_thumbnail()) : ?>
+            <div class="banner full-width mt-4 mb-4">
+                <figure>
+                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
+                </figure>
+            </div>
+            <?php endif; ?>
             <div class="page-content">
                 <div class="content-post clearfix">
                     <?php the_content(); ?>

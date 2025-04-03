@@ -34,12 +34,17 @@
       &:not(:last-child) {
         margin-bottom: 1rem;
       }
+      
+      a:hover {
+        color: $primaryColor !important;
+      }
     }
 
     .hotnews-icon {
       font-size: 1.6rem;
       color: $primaryColor;
       margin-right: 1rem;
+
     }
   }
 }

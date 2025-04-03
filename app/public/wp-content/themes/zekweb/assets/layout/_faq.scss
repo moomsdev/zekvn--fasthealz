@@ -1,0 +1,28 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixin' as *;
+
+.faq {
+  margin: 0 auto;
+  max-width: 85rem;
+
+  .accordion-button {
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+    font-weight: 600;
+    background-color: $primaryColor;
+    color: #fff;
+
+    &:after {
+      background-image: $accordion-button-icon !important;
+    }
+
+    &:not(.collapsed)::after {
+      background-image: $accordion-button-icon !important;
+    }
+  }
+
+  .accordion-body {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 400;
+    color: $greyColor;
+  }
+}

@@ -1,2 +1,72 @@
 @use '../utilities/variables' as *;
 @use '../utilities/mixin' as *;
+
+.place {
+  margin: 0 auto;
+  max-width: 82rem;
+  .place-title {
+    margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+    padding-bottom: clamp(1rem, 2.5vw, 1.5rem);
+    border-bottom: 1px solid #000;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(2.5rem, 2.5vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1em;
+      text-transform: uppercase;
+      color: $orangeColor;
+    }
+
+    img {
+      width: 2.6rem;
+    }
+  }
+
+  .place-content {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-content: space-between;
+      gap: 1.5rem;
+
+      @include mediaMaxWidth(768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include mediaMaxWidth(480px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-left: 1.5rem;
+        font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+        line-height: 1em;
+        font-weight: 600;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 45%;
+          left: 0;
+          transform: translateY(-50%);
+          border-radius: 50%;
+          width: 100%;
+          height: .7rem;
+          width: .7rem;
+          background-color: $primaryColor;
+        }
+        
+        a:hover {
+          color: $orangeColor;
+        }
+      }
+    }
+  }
+}

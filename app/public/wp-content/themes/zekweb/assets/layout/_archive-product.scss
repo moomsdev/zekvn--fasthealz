@@ -16,9 +16,9 @@
   }
 
   &:hover {
-    .product-addcart,
+    .add_to_cart_button,
     .product-addcart__overlay {
-      opacity: 1;
+      opacity: 1 !important;
     }
   }
 }

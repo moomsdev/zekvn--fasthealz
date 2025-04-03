@@ -1,28 +1,35 @@
 @use '../utilities/variables' as *;
 @use '../utilities/mixin' as *;
 
-.product-addcart {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    padding: .8rem 1.6rem;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    line-height: 1.2;
-    text-align: center;
-    border-radius: 1rem;
-    color: #fff;
-    background-color: $orangeColor;
-    border: none;
-    outline: none;
-    z-index: 1;
-    opacity: 0;
-    transition: all 0.5s linear;
+.product-image {
+  .added_to_cart  {
+    display: none !important;
+  }
+
+  .add_to_cart_button {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    padding: .8rem 1.6rem !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: clamp(1.4rem, 2.5vw, 2rem) !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    border-radius: 1rem !important;
+    color: #fff !important;
+    background-color: $orangeColor !important;
+    border: none !important;
+    outline: none !important;
+    z-index: 1 !important;
+    opacity: 0 !important;
+    transition: all 0.5s linear !important;
+    width: fit-content !important;
 
     &:hover {
-      background-color: $orangeColor;
+      background-color: $orangeColor !important;
     }
   }
+} 
 
 
   .button {
@@ -39,26 +46,63 @@
     }
 
     &.rdu-3 {
-      border-radius: 3rem;
-      border-style: solid;
-      border-width: 1px;
+      border-radius: 3rem !important;
+      border-style: solid !important;
+      border-width: 1px !important;
     }
 
     &.rdu-2 {
-      border-radius: 2rem;
-      border-style: solid;
-      border-width: 1px;
+      border-radius: 2rem !important;
+      border-style: solid !important;
+      border-width: 1px !important;
     }
 
     &.rdu-1 {
-      border-radius: 1rem;
-      border-style: solid;
-      border-width: 1px;
+      border-radius: 1rem !important;
+      border-style: solid !important;
+      border-width: 1px !important;
     }
 
     i {
       margin-left: .5rem;
     }
+
+    &.blue-btn {
+      background-color: $primaryColor !important;
+      color: #fff !important;
+
+      &:hover {
+        opacity: 0.8 !important;
+      }
+    }
+
+    &.black-btn {
+      background-color: #000 !important;
+      color: #fff !important;
+      
+      &:hover {
+        opacity: 0.8 !important;
+      }
+    }
+
+    &.red-btn {
+      background-color: #D0011B !important;
+      color: #fff !important;
+
+      &:hover {
+        opacity: 0.8 !important;
+      }
+    }
+
+    &.img-btn {
+      img {
+        width: 100% !important;
+        max-width: 3rem !important;
+        height: auto !important;
+        max-height: 3rem;
+      }
+    }
+
   }
 
   .add_to_cart_button,

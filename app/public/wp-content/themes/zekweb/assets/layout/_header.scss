@@ -13,15 +13,223 @@ header {
     }
 
     .logo {
+      position: relative;
       max-width: 21rem;
+      
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        bottom: 0;
+        width: 2px;
+        height: 100%;
+        background-color: $primaryColor;
+
+        @include mediaMaxWidth(768px) {
+          display: none;
+        }
+      }
+
+      &::after {
+        left: -1rem;
+      }
+
+      &::before {
+        right: -1rem;
+      }
     }
 
     .slogan {
-      max-width: 10rem;
+      max-width: 16rem;
       font-size: 1.5rem;
       font-weight: 700;
       color: $primaryColor;
     }
 
+    @include mediaMaxWidth(768px) {
+      justify-content: space-between;
+    }
+  }
+
+  .col-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem 4rem;
+  }
+  
+  form.woocommerce-product-search {
+    padding: .2rem 2rem;
+    display: flex;
+    column-gap: 2rem;
+    min-width: 32rem;
+    align-items: center;
+    justify-content: center;
+    background-color: $primaryColor;
+    border-radius: 2.5rem;
+
+  }
+
+  input.search-input {
+    margin-bottom: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+
+    &::placeholder {
+      color: #fff;
+    }
+  }
+
+  button.search-submit {
+    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    
+    i{
+      color: #fff;
+    }
+  }
+
+  .info {
+    .hotline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      a, i{
+        font-size: clamp(1.8rem, 2.5vw, 2rem);
+        color: $primaryColor
+      }
+    }
+
+    .page-link {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+
+      a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .8rem 2rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        color: #fff;
+        transition: all 0.25s linear;
+        border: 1px solid;
+
+        &:hover {
+          background-color: #fff;
+        }
+      }
+
+      .btn-orange{
+        background-color: $orangeColor;
+        border-color: $orangeColor;
+
+        &:hover {
+          color: $orangeColor;
+        }
+      }
+      
+      .btn-red{
+        background-color: $redColor;
+        border-color: $redColor;
+
+        &:hover {
+          color: $redColor;
+        }
+      }
+    }
+  }
+
+  .main-menu {
+    background-color: $primaryColor;
+  }
+
+  #menu-main-menu {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    list-style: none;
+
+    li {
+      a {
+        position: relative;
+        padding: 1.5rem 0;
+        display: inline-block;
+        color: #fff;
+        font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+        font-weight: 700;
+        line-height: 1.2;
+        transition: all 0.3s ease;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          display: block;
+          left: 0;
+          bottom: 1rem;
+          width: 0;
+          height: 2px;
+          background-color: #fff;
+          transition: all 0.3s ease;
+        }
+        &:hover {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+  }
+
+  &.fixed {
+    .main-menu {
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      animation-name: fadeInUp;
+      animation-duration: 1s;
+      z-index: 99999;
+      box-shadow: 0px 2px 8px -2px #000;
+    }
+
+    @include mediaMaxWidth(768px) {
+      .header-main {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        animation-name: fadeInUp;
+        animation-duration: 1s;
+        background-color: #fff;
+        z-index: 99999;
+        box-shadow: 0px 2px 8px -2px #000;
+      }
+    }
+
+   
+  }
+}
+
+#menu-mobile {
+  background-color: $primaryColor !important;
+
+  ul {
+    a {
+      color: #fff;
+      text-transform: uppercase;
+    }
   }
 }

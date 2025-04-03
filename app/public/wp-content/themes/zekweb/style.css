@@ -226,6 +226,8 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
 
 
 /* Product */
+.woocommerce .woocommerce-result-count, .woocommerce-page .woocommerce-result-count{float: none;display: none;}
+.woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering{float: none;display: none;}
 
 
 /* Detail */
@@ -454,7 +456,7 @@ html, body {
 body.active-menu .line-dark{opacity: 1;visibility: visible;cursor: url(images/close.png) 20 20,default;}
 #menu-mobile{display: block;transition: all .5s; background: #fff;z-index: 9999;position: fixed;width: 300px;height: 100%;top: 0;left: -300px;opacity: 0;visibility: hidden;padding-top: 40px;}
 body.active-menu #menu-mobile{opacity: 1;visibility: visible;left: 0;}
-#menu-mobile .close{width: 24px;height: 24px;cursor: pointer;background-image: url(images/close-menu.png);background-size: 18px;background-repeat: no-repeat;background-position: center;position: absolute;top: 12px;right: 12px;}
+#menu-mobile .close{width: 24px;height: 24px;cursor: pointer;background-image: url(images/close.png);background-size: 18px;background-repeat: no-repeat;background-position: center;position: absolute;top: 12px;right: 12px;}
 #menu-mobile ul{list-style: none;margin-bottom: 0;}
 #menu-mobile .menu{height: 100%;overflow-y: auto;padding: 15px 10px 10px 20px;}
 #menu-mobile .menu ul{display: none;padding-left: 20px;}
@@ -502,3 +504,19 @@ body.active-menu #menu-mobile{opacity: 1;visibility: visible;left: 0;}
 
 }
 
+
+/* Header */
+.touch-menu{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-image: url(images/touch.png);
+  background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-right: 20px;
+}
+
+body.active .touch-menu{
+  background-image: url(images/close.png);
+}

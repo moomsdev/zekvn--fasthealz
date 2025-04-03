@@ -5,4 +5,22 @@
     &:not(:last-child) {
         margin-bottom: 15px;
     }
+
+    .title {
+        font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+        margin-bottom: clamp(1rem, 2.5vw, 2rem);
+    }
+    
+    img {
+        aspect-ratio: 156/105;
+    }
+}
+
+.category  {
+    .first-post {
+        img {
+            margin-bottom: clamp(1rem, 2.5vw, 2rem);
+            aspect-ratio: 439/290;
+        }
+    }
 }

@@ -38,16 +38,19 @@
 		<div class="line-dark"></div>
 		<header id="header">
 			<?php
-			if (is_home() || is_front_page()) :
-				echo '<h1 class="site-name" style="display: none;">' . bloginfo('title') . '</h1>';
-			endif;
+			if (is_home() || is_front_page()) {
+				echo '<h1 class="site-name" style="display: none;">' . get_bloginfo('name') . '</h1>';
+			}
 			?>
 
 			<div class="header-main">
 				<div class="container">
-					<div class="row d-none d-md-flex">
-						<div class="col-md-6 col-left">
-							<div class="sublogo">
+					<div class="row pt-4 pb-4">
+						<div class="col-md-6 col-left d-flex align-items-center">
+							<div id="touch-menu" class="touch-menu d-block d-md-none">
+							</div>
+								
+							<div class="sublogo d-none d-md-block">
 								<img src="<?php the_field('sublogo', 'option') ?>" alt="<?php bloginfo('title'); ?>" />
 							</div>
 
@@ -57,57 +60,69 @@
 								</a>
 							</div>
 
-							<div class="slogan">
+							<div class="slogan d-none d-md-block">
 								<?php the_field('slogan', 'option'); ?>
 							</div>
 						</div>
 
-						<div class="col-md-6 col-right">
+						<div class="col-md-6 col-right d-none d-md-flex">
 							<div class="search">
 								<form role="search" method="get" autocomplete="off" class="woocommerce-product-search" action="<?php echo esc_url(home_url('/')); ?>">
 									<label class="screen-reader-text" for="woocommerce-product-search-field-<?php echo isset($index) ? absint($index) : 0; ?>"><?php esc_html_e('Search for:', 'woocommerce'); ?></label>
-									<input type="search" id="woocommerce-product-search-field-<?php echo isset($index) ? absint($index) : 0; ?>" class="search-input" placeholder="<?php echo esc_attr__('Search products&hellip;', 'woocommerce'); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-									<button type="submit" value="<?php echo esc_attr_x('Search', 'submit button', 'woocommerce'); ?>" class="search-submit"></button>
+									<input type="search" id="woocommerce-product-search-field-<?php echo isset($index) ? absint($index) : 0; ?>" class="search-input" placeholder="<?php echo esc_attr__('Nhập tìm kiếm&hellip;', 'woocommerce'); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+									<button type="submit" value="<?php echo esc_attr_x('Search', 'submit button', 'woocommerce'); ?>" class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
 									<input type="hidden" name="post_type" value="product" />
 								</form>
 							</div>
 
 							<div class="info">
-								<div class="hotline">
-									<i class="fa fa-phone"></i>
-									<a href="tel:<?php the_field('hotline', 'option'); ?>">
-										<?php the_field('hotline', 'option'); ?>
-									</a>
-								</div>
-
+								<?php
+								$contact = get_field('contact', 'option');
+								$hotline = $contact['hotline'];
+								?>
+								<?php if ($hotline) : ?>	
+									<div class="hotline">
+										<i class="fa-solid fa-phone-volume"></i>
+										<a href="tel:<?php echo str_replace(['.', ',', ' '], '', $hotline); ?>">
+											<?php echo 'Hotline ' . $hotline; ?>
+										</a>
+									</div>
+								<?php endif; ?>
+								
 								<div class="page-link">
-									<a class="btn btn-orange" href="<?= get_field('point_of_sale', 'option') ?>"><?= esc_html__('Điểm bán', 'zekweb') ?></a>
-
-									<a class="btn btn-red" href="<?= get_field('checkout', 'option') ?>"><?= esc_html__('Đặt hàng', 'zekweb') ?></a>
+									<?php
+									$point_of_sale = get_field('point_of_sale', 'option');
+									$checkout = get_field('checkout', 'option');
+									if ($point_of_sale) :
+										echo '<a class="button rdu-2 btn-orange" href="' . $point_of_sale . '">' . esc_html__('Điểm bán', 'zekweb') . '</a>';
+									endif;
+									if ($checkout) :
+										echo '<a class="button rdu-2 btn-red" href="' . $checkout . '">' . esc_html__('Đặt hàng', 'zekweb') . '</a>';
+									endif;
+									?>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<div class="main-menu full-width">
+					<div class="main-menu full-width d-none d-md-block">
 						<div class="container">
 							<?php
-							wp_nav_menu([
-								'container' => '',
-								'theme_location' => 'main',
-								'menu_class' => 'menu'
-							]);
+							wp_nav_menu(['container' => '', 'theme_location' => 'main', 'menu_class' => 'menu']);
 							?>
 						</div>
 					</div>
 				</div>
 			</div>
-
-			<section class="section-banner">
-				<figure class="media">
-					<img src="<?= get_field('banner_home', 'option') ?>" alt="">
-				</figure>
-			</section>
+			<?php
+			if (is_home() || is_front_page()) :
+			?>
+				<section class="section-banner">
+					<figure class="media">
+						<img src="<?= get_field('banner_home', 'option') ?>" alt="">
+					</figure>
+				</section>
+			<?php endif; ?>
 		</header>
 
 		<div id="menu-mobile">

@@ -1,0 +1,29 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixin' as *;
+
+.loop-post {
+  figure {
+    margin-bottom: clamp(1rem, 2.5vw, 2rem);
+    border-radius: 3rem;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      aspect-ratio: 1/1;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .title {
+    margin-bottom: clamp(1rem, 2.5vw, 2rem);
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  }
+}
+

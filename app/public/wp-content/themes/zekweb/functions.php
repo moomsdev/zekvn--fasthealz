@@ -136,6 +136,8 @@ function filter_ptags_on_images($content)
 add_filter('the_content', 'filter_ptags_on_images');
 
 register_nav_menu('main', 'Main');
+register_nav_menu('footer', 'Footer');
+
 register_sidebar(array(
     'name' => __('Footer', 'theme_text_domain'),
     'id' => 'footer',
@@ -686,6 +688,15 @@ function dequeue_woocommerce_cart_fragments()
         wp_dequeue_script('wc-cart-fragments');
 }
 
+function theme_enqueue_woocommerce_ajax_add_to_cart() {
+    if ( class_exists( 'WooCommerce' ) ) {
+        wp_enqueue_script( 'wc-add-to-cart' );
+        wp_enqueue_script( 'wc-cart-fragments' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_woocommerce_ajax_add_to_cart', 20 );
+
+
 add_filter('woocommerce_background_image_regeneration', '__return_false');
 
 //* Loại bỏ các icon không cần thiết 
@@ -825,7 +836,7 @@ function getYoutubeEmbedUrl($url) {
         $video_id = explode('&', $video_id)[0];
     }
     
-    return 'https://www.youtube.com/embed/' . $video_id;
+    return 'https://www.youtube.com/embed/' . $video_id . '?autoplay=1&mute=1&rel=0&modestbranding=1';
 }
 
 function getYoutubeVideoId($url) {
@@ -835,4 +846,206 @@ function getYoutubeVideoId($url) {
         $video_id = $match[1];
     }
     return $video_id;
+}
+
+
+function filter_cf7_mail_content($components, $contact_form) {
+    $submission = WPCF7_Submission::get_instance();
+    if (!$submission) return $components;
+
+    $data = $submission->get_posted_data();
+
+    // Lấy danh sách sản phẩm từ ACF
+    $product_ids = get_field('product_object', 'option');
+    if (!$product_ids || !is_array($product_ids)) {
+        $components['body'] = str_replace('[product_list_mail]', 'Không có sản phẩm nào.', $components['body']);
+        return $components;
+    }
+
+    $product_list = "<table border='1' cellpadding='5' cellspacing='0' style='border-collapse: collapse; width: 100%;'>
+                        <thead>
+                            <tr>
+                                <th style='text-align:left;'>Sản phẩm</th>
+                                <th style='text-align:right;'>Đơn giá</th>
+                                <th style='text-align:center;'>Số lượng</th>
+                                <th style='text-align:right;'>Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>";
+    
+    $total_order_price = 0; // Tổng giá trị đơn hàng
+
+    foreach ($product_ids as $index => $product_id) {
+        $field_name = "buy_number" . ($index + 1);
+        $quantity = isset($data[$field_name]) ? intval($data[$field_name]) : 0;
+
+        if ($quantity > 0) {
+            $product_name = get_the_title($product_id);
+            $product_price = get_post_meta($product_id, '_price', true);
+            $subtotal = $product_price * $quantity;
+            $total_order_price += $subtotal; // Cộng vào tổng giá trị đơn hàng
+
+            $product_list .= "<tr>
+                                <td>{$product_name}</td>
+                                <td style='text-align:right;'>" . number_format($product_price, 0, ',', '.') . "đ</td>
+                                <td style='text-align:center;'>{$quantity}</td>
+                                <td style='text-align:right;'>" . number_format($subtotal, 0, ',', '.') . "đ</td>
+                            </tr>";
+        }
+    }
+
+    if ($total_order_price > 0) {
+        $product_list .= "<tr>
+                            <td colspan='3' style='text-align:right; font-weight:bold;'>Tổng cộng:</td>
+                            <td style='text-align:right; font-weight:bold;'>" . number_format($total_order_price, 0, ',', '.') . "đ</td>
+                        </tr>";
+    } else {
+        $product_list = "<p>Không có sản phẩm nào được chọn.</p>";
+    }
+
+    $product_list .= "</tbody></table>";
+
+    $components['body'] = str_replace('[product_list_mail]', $product_list, $components['body']);
+    
+    return $components;
+}
+add_filter('wpcf7_mail_components', 'filter_cf7_mail_content', 10, 2);
+
+function dynamic_product_fields() {
+    $product_ids = get_field('product_object', 'option');
+    if (!$product_ids || !is_array($product_ids)) {
+        return "<tr><td colspan='4'>Không có sản phẩm nào.</td></tr>";
+    }
+
+    // Lấy phí và ngưỡng miễn phí từ ACF
+    $shipping_fee = get_field('shipping_fee', 'option');
+    $free_threshold = get_field('free_shipping_threshold', 'option');
+
+    // Đảm bảo là số nguyên
+    $shipping_fee = intval($shipping_fee);
+    $free_threshold = intval($free_threshold);
+
+    // Gửi thông tin này xuống JS bằng data-attributes
+    $html = "<tbody data-shipping='{$shipping_fee}' data-threshold='{$free_threshold}'>";
+
+    foreach ($product_ids as $index => $product_id) {
+        $product_name = get_the_title($product_id);
+        $product_price = get_post_meta($product_id, '_price', true);
+        $field_name = "buy_number" . ($index + 1);
+
+        $html .= "<tr>
+            <td>{$product_name}</td>
+            <td>
+                " . number_format($product_price, 0, ',', '.') . "đ
+            </td>
+            <td>
+                <input 
+                    type='number' 
+                    name='{$field_name}' 
+                    value='0' 
+                    min='0' 
+                    step='1' 
+                    data-price='{$product_price}' 
+                    class='qty-input' 
+                />
+            </td>
+            <td class='subtotal-realtime'>0đ</td>
+        </tr>";
+    }
+
+    $html .= "
+        <tr>
+            <td colspan='3'>Phí vận chuyển</td>
+            <td class='shipping-fee'>0đ</td>
+        </tr>
+        <tr>
+            <td colspan='3' class='orange-color' style='font-weight: bold;'>Tổng cộng</td>
+            <td class='total-realtime orange-color' style='font-weight: bold;'>0đ</td>
+        </tr>
+    </tbody>";
+
+    return $html;
+}
+
+
+function add_dynamic_product_fields_to_cf7($form) {
+    if (strpos($form, '[dynamic_product_fields]') !== false) {
+        $product_fields = dynamic_product_fields();
+        $form = str_replace('[dynamic_product_fields]', $product_fields, $form);
+    }
+    return $form;
+}
+add_filter('wpcf7_form_elements', 'add_dynamic_product_fields_to_cf7');
+
+add_action('wpcf7_mail_sent', 'create_order_from_cf7');
+function create_order_from_cf7($contact_form) {
+    $form_id = $contact_form->id();
+    $target_form_id = '09961a7'; // Thay bằng ID form của bạn
+
+    if ($form_id != $target_form_id) {
+        return;
+    }
+
+    // Lấy dữ liệu từ form
+    $submission = WPCF7_Submission::get_instance();
+    if (!$submission) return;
+
+    $data = $submission->get_posted_data();
+
+    $customer_name  = sanitize_text_field($data['buy_name']);
+    $customer_phone = sanitize_text_field($data['buy_phone']);
+    $customer_address = sanitize_text_field($data['buy_address']);
+
+    // Lấy danh sách sản phẩm từ ACF (multi-select field)
+    $product_ids = get_field('product_object','option'); 
+    if (!is_array($product_ids)) {
+        $product_ids = []; // Đảm bảo biến này luôn là mảng
+    }
+
+    // Chuẩn bị danh sách sản phẩm với số lượng từ form
+    $products = [];
+    foreach ($product_ids as $index => $product_id) {
+        $qty_field = 'buy_number' . ($index + 1); // Tạo tên trường số lượng động
+        $qty = isset($data[$qty_field]) ? intval($data[$qty_field]) : 0;
+
+        if ($qty > 0) {
+            $products[] = [
+                'id'  => $product_id,
+                'qty' => $qty
+            ];
+        }
+    }
+
+    // Nếu không có sản phẩm nào, thoát khỏi hàm
+    if (empty($products)) return;
+
+    // Tạo đơn hàng mới
+    $order = wc_create_order();
+    foreach ($products as $product) {
+        $item = new WC_Order_Item_Product();
+        $item->set_product_id($product['id']);
+        $item->set_quantity($product['qty']);
+
+        // Lấy giá và tên sản phẩm
+        $price = get_post_meta($product['id'], '_price', true);
+        $subtotal = $price * $product['qty'];
+        $product_name = get_the_title($product['id']); // Lấy tên sản phẩm
+
+        $item->set_subtotal($subtotal);
+        $item->set_total($subtotal);
+        $item->set_name($product_name); // Thêm tên sản phẩm vào item
+
+        $order->add_item($item);
+    }
+
+    // Cập nhật thông tin đơn hàng
+    $order->set_address([
+        'first_name' => $customer_name,
+        'phone'      => $customer_phone,
+        'address_1'  => $customer_address
+    ], 'billing');
+
+    // $order->set_customer_note($customer_note);
+    $order->calculate_totals(); // Tính lại tổng tiền
+    $order->update_status('processing'); // Trạng thái: Đang xử lý
 }

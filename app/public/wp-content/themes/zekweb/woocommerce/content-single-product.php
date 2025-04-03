@@ -34,7 +34,7 @@ if ( post_password_required() ) {
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 	<div class="detail-head">
 		<div class="row row-margin">
-			<div class="col-xl-6 col-lg-6 col-md-12">
+			<div class="col-12 col-lg-4 ">
 				<?php
 				/**
 				 * Hook: woocommerce_before_single_product_summary.
@@ -44,8 +44,13 @@ if ( post_password_required() ) {
 				 */
 				do_action( 'woocommerce_before_single_product_summary' );
 				?>
+				<div class="highlight">
+					<p>
+					Khách hàng có thể mua Fasthealz chính hãng tại các nhà thuốc lớn trên toàn quốc hoặc mua online qua sàn thương mại điện tử chính thống
+					</p>
+				</div>
 			</div>
-			<div class="col-xl-6 col-lg-6 col-md-12">
+			<div class="col-12 col-lg-8">
 				<?php
 				/**
 				 * Hook: woocommerce_single_product_summary.
@@ -61,8 +66,50 @@ if ( post_password_required() ) {
 				 */
 				do_action( 'woocommerce_single_product_summary' );
 				?>
+				<div class="support d-flex align-items-center justify-content-center flex-wrap">
+					<div class="support-item text-center">
+						<figure>
+							<img src="<?php bloginfo('template_url' ); ?>/images/tu-van-icon.png" alt="">
+						</figure>
+						<span> Tư vấn 24/7 </span>
+					</div>
+					<div class="support-item text-center">
+						<figure>
+							<img src="<?php bloginfo('template_url' ); ?>/images/giao-hang-icon.png" alt="">
+						</figure>
+						<span> Giao hàng nhanh chóng </span>
+					</div>
+					<div class="support-item text-center">
+						<figure>
+							<img src="<?php bloginfo('template_url' ); ?>/images/chat-luong-icon.png" alt="">
+						</figure>
+						<span> Cam kết chất lượng </span>
+					</div>
+				</div>
 			</div>
-		</div>
+
+			<div class="col-12 d-flex align-items-center justify-content-center gap-5 flex-wrap">
+					<a class="button rdu-1 d-flex align-items-center justify-content-center gap-3 blue-btn img-btn">
+						<img src="<?php bloginfo('template_url' ); ?>/images/shop-icon.png" alt="">
+						<span> Mua hàng tại nhà thuốc </span>
+					</a>
+					<a class="button rdu-1 d-flex align-items-center justify-content-center gap-3 black-btn img-btn">
+						<img src="<?php bloginfo('template_url' ); ?>/images/tiktok-icon.png" alt="">
+						<span> Mua hàng tại Tiktok Shop </span>
+					</a>
+					<a class="button rdu-1 d-flex align-items-center justify-content-center gap-3 red-btn img-btn">
+						<img src="<?php bloginfo('template_url' ); ?>/images/shopee-icon.png" alt="">
+						<span> Mua hàng tại Shopee Mall</span>
+					</a>
+			</div>
+
+			<div class="col-12">
+				<figure class="media">
+					<img src="<?= get_field('banner') ?>" alt="">
+				</figure>
+			</div>
+  </div>
+</div>
 	</div>
 	<div class="detail-body">
 		<div class="block-content">
@@ -70,9 +117,9 @@ if ( post_password_required() ) {
 				<?php the_content();?>
 			</div>
 		</div>
-		<div class="block-review">
-			<?php echo do_shortcode('[cusrev_reviews]'); ?>
-		</div>
+		<!-- <div class="block-review">
+			<?php //echo do_shortcode('[cusrev_reviews]'); ?>
+		</div> -->
 	</div>
 	<?php
 	/**
@@ -83,6 +130,8 @@ if ( post_password_required() ) {
 	 * @hooked woocommerce_output_related_products - 20
 	 */
 	do_action( 'woocommerce_after_single_product_summary' );
+	get_template_part('template-parts/faq');
+	echo do_shortcode('[cusrev_all_reviews]');
 	?>
 </div>
 <script type="text/javascript" src="<?php bloginfo('template_url' ); ?>/js/qty.js"></script>

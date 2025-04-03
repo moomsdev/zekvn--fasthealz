@@ -12,7 +12,7 @@
           $description = $item['description'];
           $button = $item['button'];
       ?>
-        <div class="col-12 col-lg-4 item">
+        <div class="col-12 col-md-4 item">
           <div class="feature__inner">
             <?php 
               if ($title) :

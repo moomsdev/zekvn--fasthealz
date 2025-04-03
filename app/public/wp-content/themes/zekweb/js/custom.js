@@ -144,7 +144,7 @@
                 clickable: true,
             },
             breakpoints: {
-                0: {slidesPerView: 2, spaceBetween: 25},
+                0: {slidesPerView: 2, spaceBetween: 20},
                 575: {slidesPerView: 2, spaceBetween: 50},
                 768: {slidesPerView: 3, spaceBetween: 80}
             },
@@ -160,8 +160,8 @@
                 prevEl: ".post-slider-prev",
             },
             breakpoints: {
-                0: {slidesPerView: 1},
-                575: {slidesPerView: 2, spaceBetween: 80},
+                0: {slidesPerView: 2, spaceBetween: 20},
+                575: {slidesPerView: 2, spaceBetween: 50},
                 992: {slidesPerView: 3, spaceBetween: 80}
             },
         });
@@ -176,8 +176,8 @@
                 prevEl: ".image-slider-prev",
             },
             breakpoints: {
-                0: {slidesPerView: 1},
-                575: {slidesPerView: 2, spaceBetween: 80},
+                0: {slidesPerView: 2, spaceBetween: 20},
+                575: {slidesPerView: 2, spaceBetween: 50},
                 992: {slidesPerView: 3, spaceBetween: 80}
             },
         });
@@ -251,6 +251,30 @@
         });
     }
 
+    /**
+     * Video Modal Functionality
+     * Handles video modal functionality
+     */
+    function initVideoModal() {
+        // Initialize video modal
+        $('.video-thumbnail').click(function() {
+            var videoUrl = $(this).data('video');
+            $('#videoModal iframe').attr('src', videoUrl);
+            $('#videoModal').modal('show');
+            });
+            
+            // Sửa lại event close modal
+            $('.close, #videoModal').on('click', function () {
+            $('#videoModal iframe').attr('src', '');
+            $('#videoModal').modal('hide');
+            });
+            
+            // Ngăn modal đóng khi click vào video
+        $('.modal-content').on('click', function (e) {
+            e.stopPropagation();
+        });
+    }
+
     // Initialize all functionality
     initMobileMenu();
     enhanceUI();
@@ -258,5 +282,5 @@
     initSliders();
     initContactForm();
     initQuickOrder();
-
+    initVideoModal();
 })(jQuery);

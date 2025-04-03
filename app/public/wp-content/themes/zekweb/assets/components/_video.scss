@@ -1,14 +1,16 @@
 .video-thumbnail {
   position: relative;
   cursor: pointer;
+  border-radius: 2rem;
+  overflow: hidden;
 
   .play-button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 6rem;
-    height: 6rem;
+    width: clamp(3rem, 2.5vw, 6rem);
+    height: clamp(3rem, 2.5vw, 6rem);
     background: rgba(0, 0, 0, 0.7);
     border-radius: 50%;
     display: flex;
@@ -17,7 +19,7 @@
 
     i {
       color: white;
-      font-size: 2.4rem;
+      font-size: clamp(1.4rem, 2.5vw, 2.4rem);
     }
   }
 }
@@ -41,13 +43,14 @@
 
 .close {
   position: absolute;
-  right: -4rem;
-  top: -4rem;
-  color: white;
+  right: 0;
+  top: clamp(-4.5rem, 2.5vw, -5.5rem);
+  color: #fff;
   opacity: 1;
   z-index: 999;
-  font-size: 3rem;
-  font-weight: normal;
+  font-size: clamp(3.5rem, 2.5vw, 5rem);
+  background: none;
+  border: none;
 }
 
 .embed-responsive {

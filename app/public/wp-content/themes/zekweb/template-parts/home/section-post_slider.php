@@ -13,7 +13,7 @@ if ($post_slider):
       'tax_query' =>  [[ 'taxonomy' => 'category', 'field'    => 'term_id', 'terms'    => $category, ]],
     ];
 ?>
-    <section class="slider mb-5">
+    <section class="slider section-post-slider">
       <div class="container">
         <?php
         if ($title):
@@ -38,7 +38,7 @@ if ($post_slider):
                     <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Placeholder Image" class="image">
                   </figure>
 
-                  <h4 class="title multi-line-1"> <a href="<?php the_permalink(); ?>"><?= get_the_title(); ?></a></h4>
+                  <h4 class="title multi-line-2"> <a href="<?php the_permalink(); ?>"><?= get_the_title(); ?></a></h4>
 
                   <div class="description multi-line-3"><?= get_the_excerpt(); ?></div>
                 </div>
@@ -52,8 +52,8 @@ if ($post_slider):
             </div>
           </div>
 
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev post-slider-prev"></div>
+          <div class="swiper-button-next post-slider-next"></div>
         </div>
         <!-- End swiper wrapper container -->
       </div>
