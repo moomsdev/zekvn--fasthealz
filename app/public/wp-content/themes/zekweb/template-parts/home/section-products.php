@@ -43,12 +43,12 @@
                 </div>
               </div>
 
-              <div class="action d-flex flex-wrap flex-lg-nowrap gap-2">
+              <div class="action d-flex justify-content-center gap-4">
                 <!-- Add to cart -->
                 <?php $product_id = $product->get_id(); ?>
                 <a href="?add-to-cart=<?php echo $product_id; ?>" 
                   data-quantity="1" 
-                  class="button product_type_simple  add_to_cart_button ajax_add_to_cart custom-add-to-cart" 
+                  class="button product_type_simple add_to_cart_button ajax_add_to_cart custom-add-to-cart" 
                   data-product_id="<?php echo $product_id; ?>" 
                   data-product_sku="<?php echo $product->get_sku(); ?>" 
                   aria-label="Thêm sản phẩm vào giỏ hàng" 
