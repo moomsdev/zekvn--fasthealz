@@ -149,9 +149,8 @@ p:empty {
 
 .title {
   margin: 0 auto 2rem;
-  margin-bottom: 2rem;
-  width: 80%;
-  font-size: clamp(2.4rem, 2.5vw, 3.2rem);
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
   font-weight: 600;
   line-height: 1.2;
   text-align: center;
@@ -214,7 +213,9 @@ figure {
   .detail-body {
     img {
       width: auto;
+      max-width: 100%;
     }
+
   }
 
   .price {

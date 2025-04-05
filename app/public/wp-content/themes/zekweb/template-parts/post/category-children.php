@@ -26,7 +26,7 @@ $term = get_queried_object();
           if ($post_query->have_posts()) :
             while ($post_query->have_posts()) : $post_query->the_post();
           ?>
-            <div class="col-6 col-xl-6 mb-md-5 loop-post">
+            <div class="col-6 col-xl-6 mb-md-5 mb-5 mb-md-0 loop-post">
               <a href="<?php the_permalink(); ?>" class="d-block">
                 <figure>
                   <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">

@@ -1,2 +1,26 @@
 @use '../utilities/variables' as *;
 @use '../utilities/mixin' as *;
+
+nav.pagination {
+  ul li {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+
+    .current {
+      background-color: $primaryColor;
+      color: #fff;
+      border-radius: 5px;
+      
+      &:hover {
+        background-color: $primaryColor;
+        color: #fff;
+      }
+    }
+
+    a:hover {
+      background-color: $primaryColor;
+      color: #fff;
+    }
+  }
+}

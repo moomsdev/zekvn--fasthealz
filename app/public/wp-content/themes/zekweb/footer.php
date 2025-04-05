@@ -126,28 +126,36 @@ $shopeeShop = $shopOnline['shopee'];
             </footer>
 
             <div class="supports">
-                <div class="item">
-                    <a href="tel:<?php the_field('hotline', 'option'); ?>"
-                        class="hotline" title="Gọi ngay">
+                <?php if ($hotline) : ?>
+                    <div class="item">
+                        <a href="tel:<?php echo str_replace(['.', ',', ' '], '', $hotline); ?>"
+                            class="hotline" title="Gọi ngay">
                         <img src="<?php bloginfo('template_url'); ?>/images/support-hotline.png"
                             alt="icon">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="http://zalo.me/<?php the_field('zalo', 'option') ?>"
-                        target="_blank" class="zalo" title="Chat Zalo">
+                        </a>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($zalo) : ?>
+                    <div class="item">
+                        <a href="http://zalo.me/<?php echo $zalo ?>"
+                            target="_blank" class="zalo" title="Chat Zalo">
                         <img src="<?php bloginfo('template_url'); ?>/images/support-zalo.png"
                             alt="icon">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://m.me/<?php the_field(' ', 'option') ?>"
-                        target="_blank" class="messenger" title="Chat Facebook">
+                        </a>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($facebook) : ?>   
+                    <div class="item">
+                        <a href="https://m.me/<?php echo $facebook ?>"
+                            target="_blank" class="messenger" title="Chat Facebook">
                         <img decoding="async"
                             src="<?php bloginfo('template_url'); ?>/images/support-messenger.png"
                             alt="icon">
-                    </a>
-                </div>
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <div class="backtop">
@@ -168,6 +176,22 @@ $shopeeShop = $shopOnline['shopee'];
             $value = get_field('code_footer', 'option');
             echo $value;
             ?>
+            <!-- Modal -->
+            <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
             <?php wp_footer(); ?>
         </div>
     </body>

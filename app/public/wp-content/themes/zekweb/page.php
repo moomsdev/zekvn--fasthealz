@@ -4,7 +4,7 @@
     <?php get_template_part('breadcrums'); ?>
     <div class="page-body">
         <div class="container">
-            <h1 class="page-title orange-color"><?php the_title();?></h1>
+            <h1 class="title-orange text-uppercase"><?php the_title();?></h1>
             <?php if (has_post_thumbnail()) : ?>
             <div class="banner full-width mt-4 mb-4">
                 <figure>

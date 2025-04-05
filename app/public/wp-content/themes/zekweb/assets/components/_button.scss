@@ -24,6 +24,7 @@
     opacity: 0 !important;
     transition: all 0.5s linear !important;
     width: fit-content !important;
+    min-width: max-content;
 
     &:hover {
       background-color: $orangeColor !important;

@@ -34,19 +34,3 @@ $videos = $media[0]['video'];
     </div>
   </div>
 </section>
-
-<!-- Modal -->
-<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

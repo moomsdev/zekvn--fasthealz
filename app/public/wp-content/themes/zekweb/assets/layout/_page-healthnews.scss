@@ -9,6 +9,10 @@
     .title {
         font-size: clamp(1.8rem, 2.5vw, 2.4rem);
         margin-bottom: clamp(1rem, 2.5vw, 2rem);
+
+        @include mediaMaxWidth(992px) {
+            margin-top: clamp(1rem, 2.5vw, 2rem);
+        }
     }
     
     img {

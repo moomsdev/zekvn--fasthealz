@@ -3,7 +3,7 @@ $faq = get_field('faq');
 ?>
 <section class="faq">
   <div class="container">
-    <h2 class="title-orange">Câu hỏi thường gặp</h2>
+    <h2 class="title-orange text-uppercase">Câu hỏi thường gặp</h2>
     
     <div class="accordion" id="accordionExample">
       <?php $i = 0; ?>

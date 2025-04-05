@@ -50,8 +50,9 @@
 }
 
 .product-looknow {
-  width: 20rem;
-  font-size: 2.4rem;
+  padding: .5rem 3rem;
+  width: 100%;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
   font-weight: 600;
   line-height: 1.2;
   text-align: center;
@@ -63,5 +64,15 @@
 
   &:hover {
     background-color: $primaryColor;
+  }
+}
+
+.product-list {
+  .product-item {
+    a {
+      display: block;
+      width: 100%;
+      max-width: 20rem;
+    }
   }
 }

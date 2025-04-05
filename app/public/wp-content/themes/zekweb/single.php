@@ -11,9 +11,9 @@
             </div>
 
             <div class="row mt-5">
-                <!-- <div class="col-12">
-                    <?php //echo do_shortcode('[toc]'); ?>
-                </div> -->
+                <div class="col-12">
+                    <?php echo do_shortcode('[toc]'); ?>
+                </div>
                 <div class="col-12 col-lg-8">
                     <?php the_content(); ?>
                 </div>

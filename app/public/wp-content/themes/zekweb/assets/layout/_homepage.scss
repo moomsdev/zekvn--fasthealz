@@ -37,11 +37,11 @@
 
   .title {
     margin-top: clamp(1.6rem, 2.5vw, 3rem);
-    font-size: clamp(2rem, 2.5vw, 3.2rem);
+    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
   }
 
   .description {
-    font-size: clamp(1.4rem, 2.5vw, 2.4rem);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
   }
 }
 
@@ -248,7 +248,7 @@ section {
       padding: 1.5rem 1rem;
       padding-bottom: clamp(.5rem, 2.5vw, 1.5rem);
       padding-top: clamp(.5rem, 2.5vw, 1.5rem);
-      font-size: clamp(1.8rem, 2.5vw, 3.2rem);
+      font-size: clamp(1.8rem, 2.5vw, 2.6rem);
       font-weight: 600;
       line-height: 1.2;
       color: $greyColor;
@@ -407,7 +407,7 @@ section {
   .title {
     margin-top: clamp(1.5rem, 2.5vw, 3rem);
     width: 90%;
-    font-size: clamp(1.8rem, 2.5vw, 3.2rem);
+    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
   }
 }
 
@@ -440,16 +440,21 @@ section {
   }
 
   .title-post {
-    font-size: clamp(1.4rem, 2.5vw, 1.6rem);
-    font-weight: 500;
-    line-height: 1.3;
+    margin-bottom: 0;
+    font-size: clamp(1.6rem, 2.5vw, 1.8rem);
+    font-weight: 600;
+    line-height: 1;
     color: #000;
+
+    a:hover {
+      color: $primaryColor;
+    }
   }
   
   .title {
     margin-top: clamp(1.5rem, 2.5vw, 3rem);
     width: 90%;
-    font-size: clamp(1.8rem, 2.5vw, 3.2rem);
+    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
   }
 
   .description {
@@ -481,15 +486,14 @@ section {
     margin-top: clamp(1rem, 2.5vw, 3rem);
     margin-bottom: clamp(1rem, 2.5vw, 2rem);
     width: 90%;
-    font-size: clamp(1.8rem, 2.5vw, 3.2rem);
+    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
   }
+
   .description {
     margin-bottom: clamp(1rem, 2.5vw, 2rem);
   }
+  
   .product-price {
     font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-  }
-  .product-looknow {
-    font-size: clamp(1.4rem, 2.5vw, 2.4rem);
   }
 }

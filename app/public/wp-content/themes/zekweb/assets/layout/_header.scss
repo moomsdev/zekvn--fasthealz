@@ -56,15 +56,23 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem 4rem;
+    gap: 2rem;
+
+    @include mediaMaxWidth(992px) {
+      flex-wrap: wrap
+    }
+
+    .search {
+      width: 100%;
+      max-width: 32rem;
+    }
   }
   
   form.woocommerce-product-search {
     padding: .2rem 2rem;
     display: flex;
     column-gap: 2rem;
-    min-width: 32rem;
+    width: 100%;
     align-items: center;
     justify-content: center;
     background-color: $primaryColor;
@@ -112,6 +120,8 @@ header {
       gap: 1.4rem;
 
       a{
+        width: 100%;
+        min-width: max-content;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -187,6 +197,13 @@ header {
           &::after {
             width: 100%;
           }
+        }
+      }
+
+      &.current_page_item a,
+      &.current-menu-item a {
+        &::after {
+          width: 100%;
         }
       }
     }

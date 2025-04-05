@@ -86,7 +86,7 @@ $title = get_field('section8', 'option');
                       <a href="<?php the_permalink(); ?>"
                         class="d-block"><?php the_title(); ?></a>
                     </h4>
-                    <div class="description multi-line-3 mt-4">
+                    <div class="description multi-line-3 mt-3">
                       <?php the_excerpt(); ?>
                     </div>
                   </div>

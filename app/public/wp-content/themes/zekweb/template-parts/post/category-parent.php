@@ -26,7 +26,7 @@ foreach ( $categories as $category ) :
     if ($post_query->have_posts()) :
         while ($post_query->have_posts()) : $post_query->the_post();
     ?>
-        <div class="col-md-12 col-xl-6 mb-md-5 first-post">
+        <div class="col-md-12 col-xl-6 mb-md-5 first-post mb-5 mb-md-0">
           <a href="<?php the_permalink(); ?>" class="d-block">
             <figure>
               <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
@@ -75,7 +75,7 @@ foreach ( $categories as $category ) :
       if ($post_query->have_posts()) :
         while ($post_query->have_posts()) : $post_query->the_post();
       ?>
-        <div class="row health-blog">
+        <div class="row health-blog mb-5 mb-md-0">
             <div class="col-md-12 col-xl-4">
                 <a href="<?php the_permalink(); ?>" class="d-block">
                     <figure>

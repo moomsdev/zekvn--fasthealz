@@ -1,0 +1,48 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixin' as *;
+
+.employee-page {
+  margin: 0 auto;
+  max-width: 85rem;
+
+  form {
+    margin-bottom: clamp(2rem, 2.5vw, 4rem);
+    input[type="submit"] {
+      width: 100%;
+      background-color: $primaryColor;
+      color: #fff;
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      border: none;
+      padding: .5rem 2rem;
+      border-radius: 0.5rem;
+      border: 1px solid $primaryColor;
+
+      &:hover {
+        background-color: #fff;
+        color: $primaryColor;
+      }
+    }
+  }
+}
+
+.latest-faq {
+  .faq-item {
+    margin-bottom: clamp(2rem, 2.5vw, 3.5rem);
+    padding: 2rem ;
+    border: 1px solid #C1C1C1;
+    border-radius: .5rem;
+
+    .faq-title {
+      margin-bottom: 1rem;
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      font-weight: 700;
+      color: $primaryColor;
+    }
+
+    .faq-content {
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      font-weight: 400;
+      color: #000;
+    }
+  }
+}
