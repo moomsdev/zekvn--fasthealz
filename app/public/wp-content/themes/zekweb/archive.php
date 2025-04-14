@@ -7,8 +7,10 @@
             <?php
             if($term->parent == 0):
                 get_template_part('template-parts/post/category', 'parent');    
-            else:
+            elseif($term->parent != 0):
                 get_template_part('template-parts/post/category', 'children');
+            else:
+                get_template_part('template-parts/post/category');
             endif;
             ?>
         </div>

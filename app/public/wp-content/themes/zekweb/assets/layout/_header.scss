@@ -10,18 +10,14 @@ header {
     .sublogo {
       max-width: 4rem;
       height: auto;
-    }
-
-    .logo {
       position: relative;
-      max-width: 21rem;
-      
-      &::before,
+
       &::after {
         content: '';
         position: absolute;
         display: block;
         bottom: 0;
+        right: -1rem;
         width: 2px;
         height: 100%;
         background-color: $primaryColor;
@@ -30,13 +26,25 @@ header {
           display: none;
         }
       }
+    }
 
+    .logo {
+      position: relative;
+      max-width: 21rem;
+      
       &::after {
-        left: -1rem;
-      }
-
-      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        bottom: 0;
         right: -1rem;
+        width: 2px;
+        height: 100%;
+        background-color: $primaryColor;
+
+        @include mediaMaxWidth(768px) {
+          display: none;
+        }
       }
     }
 

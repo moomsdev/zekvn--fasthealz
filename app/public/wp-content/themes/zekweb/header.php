@@ -36,6 +36,8 @@
 	<?php
 	$value = get_field('code_body', 'option');
 	echo $value;
+	
+	$sublogo = get_field('sublogo', 'option');
 	?>
 
 	<div id="zek-web">
@@ -53,10 +55,11 @@
 						<div class="col-md-6 col-left d-flex align-items-center">
 							<div id="touch-menu" class="touch-menu d-block d-md-none">
 							</div>
-								
+							<?php if($sublogo){ ?>
 							<div class="sublogo d-none d-md-block">
-								<img src="<?php the_field('sublogo', 'option') ?>" alt="<?php bloginfo('title'); ?>" />
+								<img src="<?php echo $sublogo; ?>" alt="<?php bloginfo('title'); ?>" />
 							</div>
+							<?php } ?>
 
 							<div class="logo">
 								<a href="<?= esc_url(home_url()); ?>" title="<?php bloginfo('title'); ?>">
@@ -84,7 +87,7 @@
 								$contact = get_field('contact', 'option');
 								$hotline = $contact['hotline'];
 								?>
-								<?php if ($hotline) : ?>	
+								<?php if($hotline) : ?>	
 									<div class="hotline">
 										<i class="fa-solid fa-phone-volume"></i>
 										<a href="tel:<?php echo str_replace(['.', ',', ' '], '', $hotline); ?>">

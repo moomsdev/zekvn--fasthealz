@@ -83,11 +83,31 @@
     text-align: center;
 
     input[type="submit"] {
+      padding-left: 4rem;
+      padding-right: 4rem;
+      position: relative;
       background-color: $orangeColor;
       color: #fff;
+      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
       font-weight: 600;
       text-transform: uppercase;
-      
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &::after {
+        content: "\f07a";
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+        font-weight: 900;
+      }
     }
   }
 
@@ -102,7 +122,7 @@
       text-align: center;
 
       img {
-        max-width: 21rem;
+        max-width: 30rem;
       }
     }
   }

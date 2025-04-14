@@ -33,27 +33,17 @@ if ( $rating_count > 0 ) : ?>
 
 <?php endif; ?>
 
-<div class="head-rating d-flex flex-wrap gap-5">
+<div class="head-rating d-flex flex-wrap gap-5 align-items-center">
 	<div class="rating">
-
-		<?php echo do_shortcode('[cusrev_reviews_rating]'); ?>
+		<img src="<?php bloginfo('template_url'); ?>/images/star.png" alt="">
 	</div>
 
 	<div class="qtt-reviews">
-		<?php echo wc_get_rating_html( $average, $rating_count ); // WPCS: XSS ok. ?>
-		<?php if ( comments_open() ) : ?>
-			<?php //phpcs:disable ?>
-			<a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf( _n( '%s customer review', '%s customer reviews', $review_count, 'woocommerce' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)</a>
-			<?php // phpcs:enable ?>
-		<?php endif ?>
+		<span><?php the_field('review_count'); ?> Đánh giá</span>
 	</div>
 
 	<div class="product-sales">
 		<!-- get product sales -->
-		<?php
-		$product_sales = get_post_meta( $product->get_id(), '_total_sales', true );
-		$product_sales = $product_sales ? $product_sales : 0;
-		?>
-		<span><?php echo $product_sales; ?> sản phẩm đã bán</span>
+		<span><?php the_field('sale_qtt'); ?> sản phẩm đã bán</span>
 	</div>
 </div>

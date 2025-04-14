@@ -64,7 +64,7 @@ foreach ( $categories as $category ) :
                   'taxonomy'         => 'category',
                   'field'            => 'term_id', 
                   'terms'            => $category->term_id,
-                  'include_children' => true,
+                  'include_children' => false,
               ],
           ],
           // Tham số 'paged' có thể giữ lại để truy cập vào thuộc tính max_num_pages trong WP_Query

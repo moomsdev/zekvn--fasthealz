@@ -7,10 +7,11 @@
     <?php 
     foreach ($products as $product) : 
       $title = $product['title'];
+      $qtt = $product['post_qtt'];
 
       $args = [
                 'post_type'      => 'product',
-                'posts_per_page' => 3,
+                'posts_per_page' => $qtt,
                 'tax_query' =>  [[ 'taxonomy' => 'product_cat', 'field'    => 'term_id', 'terms'    => $product['categories'], ]],
               ];
 

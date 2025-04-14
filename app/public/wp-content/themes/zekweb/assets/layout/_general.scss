@@ -243,3 +243,66 @@ figure {
 .pagination {
   padding: 2rem 0 0;
 }
+
+.pre-next-post h3 a {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 600;
+  color: $orangeColor;
+
+  &:hover {
+    color: $primaryColor;
+  }
+}
+
+.related-posts {
+  h3 {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    font-weight: 600;
+    color: $orangeColor;
+    text-transform: uppercase;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: $orangeColor;
+    }
+  }
+
+  ul {
+    li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: .5rem;
+        height: .5rem;
+        border-radius: 50%;
+        background-color: $greyColor;
+      }
+
+      a {
+        font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+        font-weight: 400;
+        color: $greyColor;
+        border-bottom: 1px dotted $greyColor;
+  
+        &:hover {
+          color: $primaryColor;
+        }
+      }
+
+    } 
+  }
+}

@@ -955,8 +955,8 @@ function dynamic_product_fields() {
 
     $html .= "
         <tr>
-            <td colspan='3'>Phí vận chuyển</td>
-            <td class='shipping-fee'>0đ</td>
+            <td colspan='4'>Phí vận chuyển +15K (đã trợ giá). Miễn phí cho đơn hàng từ 200K trở lên</td>
+            <td class=' d-none shipping-fee'>0đ</td>
         </tr>
         <tr>
             <td colspan='3' class='orange-color' style='font-weight: bold;'>Tổng cộng</td>
