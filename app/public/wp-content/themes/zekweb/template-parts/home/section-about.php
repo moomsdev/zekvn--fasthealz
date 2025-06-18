@@ -12,12 +12,17 @@
     <div class="row">
       <div class="col-12 col-lg-6">
         <?php
-          if ($video) :
-            echo '<div class="video-thumbnail" data-video="' . esc_url($embed_url) . '">';
-            echo '<img src="https://img.youtube.com/vi/' . getYoutubeVideoId($video) . '/maxresdefault.jpg" alt="Video thumbnail" class="img-fluid">';
-            echo '<div class="play-button"><i class="fas fa-play"></i></div>';
-            echo '</div>';
-          endif;
+        if ($thumbnail) :
+          echo '<div class="video-thumbnail" data-video="' . esc_url($embed_url) . '">';
+          echo '<img src="' . esc_url($thumbnail) . '" alt="Video thumbnail" class="img-fluid">';
+          echo '<div class="play-button"><i class="fas fa-play"></i></div>';
+          echo '</div>';
+        else :
+          echo '<div class="video-thumbnail" data-video="' . esc_url($embed_url) . '">';
+          echo '<img src="https://img.youtube.com/vi/' . getYoutubeVideoId($video) . '/maxresdefault.jpg" alt="Video thumbnail" class="img-fluid">';
+          echo '<div class="play-button"><i class="fas fa-play"></i></div>';
+          echo '</div>';
+        endif;
         ?>
       </div>
 

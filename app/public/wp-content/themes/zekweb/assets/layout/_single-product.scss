@@ -152,3 +152,18 @@
     display: none !important;
   }
 }
+
+.woocommerce div.product .detail-head form.cart {
+  @include mediaMaxWidth(576px) {
+    display: flex;
+    justify-content: start;
+
+    > * {
+      width: max-content;
+      min-width: max-content;
+      font-size: 12px;
+      margin-left: 0 !important;
+      margin-right: 6px !important;
+    }
+  }
+}

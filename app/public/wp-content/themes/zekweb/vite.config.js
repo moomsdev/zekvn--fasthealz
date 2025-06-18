@@ -5,6 +5,7 @@ export default {
   build: {
     outDir: '../dist',
     emptyOutDir: true,
+    minify: false,
     rollupOptions: {
       input: {
         style: resolve(__dirname, 'assets/style.scss'),
@@ -17,7 +18,7 @@ export default {
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '', // chỗ này để import biến/mixin dùng toàn cục nếu có
+        additionalData: '',
       },
     },
   },

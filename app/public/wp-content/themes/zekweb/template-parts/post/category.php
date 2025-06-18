@@ -1,10 +1,11 @@
 <?php
 $term = get_queried_object();
+$banner =  get_field('category_image', $term);
 ?>
 <div class="mb-5 border-1 border-dark pb-5">
   <h1 class="d-none"> <?php echo $term->name;?> </h1>
   <figure>
-    <img src="<?php echo get_field('category_image', $term); ?>" alt="<?php echo $term->name;?>">
+  <img src="<?php echo $banner; ?>" alt="<?php echo $term->name;?>">
   </figure>
   <div class="row mt-5">
     <div class="col-12 col-lg-8">

@@ -253,3 +253,12 @@ figure {
     color: $primaryColor;
   }
 }
+
+
+.banner-single figure img {
+  max-height: 500px;
+}
+
+.content-single > * {
+  text-align: justify;
+}

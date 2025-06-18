@@ -11,7 +11,7 @@
             </div>
 
             <div class="row mt-5">
-                <div class="col-12 col-lg-8">
+                <div class="col-12 col-lg-8 content-single">
                     <?php the_content(); ?>
 
                     <?php echo do_shortcode('[cusrev_reviews]'); ?>
