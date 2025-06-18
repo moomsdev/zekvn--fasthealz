@@ -524,3 +524,7 @@ body.active-menu #menu-mobile{opacity: 1;visibility: visible;left: 0;}
 body.active .touch-menu{
   background-image: url(images/close.png);
 }
+
+.header .col-left .logo:after {
+	content: none !important;
+}

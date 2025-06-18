@@ -117,6 +117,9 @@ if ( post_password_required() ) {
 				<?php the_content();?>
 			</div>
 		</div>
+		<!-- <div class="block-review">
+			<?php //echo do_shortcode('[cusrev_reviews]'); ?>
+		</div> -->
 	</div>
 	<?php
 	/**
@@ -128,7 +131,7 @@ if ( post_password_required() ) {
 	 */
 	do_action( 'woocommerce_after_single_product_summary' );
 	get_template_part('template-parts/faq');
-  	echo do_shortcode('[cusrev_reviews]');
+  echo do_shortcode('[cusrev_reviews]');
 	?>
 </div>
 <script type="text/javascript" src="<?php bloginfo('template_url' ); ?>/js/qty.js"></script>

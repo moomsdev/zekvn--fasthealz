@@ -1049,39 +1049,3 @@ function create_order_from_cf7($contact_form) {
     $order->calculate_totals(); // Tính lại tổng tiền
     $order->update_status('processing'); // Trạng thái: Đang xử lý
 }
-
-// Tạo custom post type FAQs
-function tao_custom_post_type(){
-  $label = array(
-      'name' => 'FAQs',
-      'singular_name' => 'FAQs'
-  );
-  $args = array(
-      'labels' => $label,
-      'description' => 'Post type đăng FAQs',
-      'supports' => array(
-          'title',
-          'editor',
-          'excerpt',
-          'author',
-          'thumbnail',
-          'comments',
-          'trackbacks',
-          'revisions',
-          'custom-fields'
-      ),
-      'public' => true,
-      'show_ui' => true,
-      'show_in_menu' => true,
-      'show_in_nav_menus' => true,
-      'show_in_admin_bar' => true,
-      'menu_position' => 5,
-      'menu_icon' => 'dashicons-welcome-learn-more',
-      'can_export' => true,
-      'has_archive' => true,
-      'exclude_from_search' => false,
-      'publicly_queryable' => true,
-  );
-  register_post_type('faqs', $args);
-}
-add_action('init', 'tao_custom_post_type');
