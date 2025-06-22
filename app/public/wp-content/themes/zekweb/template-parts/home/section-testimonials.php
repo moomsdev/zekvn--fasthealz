@@ -59,7 +59,7 @@ $list = $testimonials[0]['list'];
               <img src="<?php echo $item['img']; ?>" alt="Placeholder Image" class="image rounded-circle">
             </figure>
 
-            <h4 class="title"><?= $item['name']; ?></h4>
+            <h3 class="title"><?= $item['name']; ?></h3>
 
             <div class="description text-center multi-line-4">
               <?= $item['description']; ?>

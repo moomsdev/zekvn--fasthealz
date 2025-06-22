@@ -18,15 +18,18 @@ footer {
   }
 
   .title-footer {
-    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
     color: #fff;
     margin-bottom: 1rem;
+
+    @include mediaMaxWidth($md) {
+      font-size: 1.6rem;
+    }
   }
   
   p {
-    font-size: clamp(1.6rem, 3vw, 2rem);
     font-weight: 300;
     line-height: 1.2;
     color: #fff;
@@ -38,8 +41,8 @@ footer {
     display: flex;
     column-gap: 2rem;
 
-    @include mediaMaxWidth(768px) {
-      column-gap: 1.5rem;
+    @include mediaMaxWidth($md) {
+      column-gap: 1rem;
     }
 
     a {
@@ -74,8 +77,6 @@ footer {
         }
 
         a {
-          font-size: clamp(1.6rem, 3vw, 2rem);
-          font-weight: 400;
           color: #fff;
         }
       }
@@ -101,8 +102,6 @@ footer {
       }
 
       a {
-        font-size: clamp(1.6rem, 3vw, 2rem);
-        font-weight: 400;
         color: #fff;
       }
     }
@@ -124,8 +123,6 @@ footer {
     }
 
     p {
-      font-size: clamp(1.4rem, 3vw, 1.6rem);
-      font-weight: 400;
       color: #fff;
     }
   }

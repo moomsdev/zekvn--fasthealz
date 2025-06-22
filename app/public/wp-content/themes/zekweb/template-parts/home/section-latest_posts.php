@@ -34,7 +34,7 @@ $title = get_field('section8', 'option');
               </figure>
             </a>
 
-            <h3 class="title multi-line-1 text-start mx-0 w-100">
+            <h3 class="title title-featured multi-line-1 text-start mx-0 w-100">
               <a href="<?php the_permalink(); ?>"
                 class="d-block"><?php the_title(); ?></a>
             </h3>
@@ -50,9 +50,9 @@ $title = get_field('section8', 'option');
       ?>
 
       <div class="col-12 col-lg-6 mb-4">
-        <h3 class="title-posts mb-0 border-bottom border-1">
+        <span class="title mb-0 border-bottom border-1">
           CHĂM SÓC VẾT THƯƠNG VÀ CHỮA LÀNH SẸO
-        </h3>
+        </span>
         <div class="home-blogs">
           <?php
           // Get latest posts
@@ -82,7 +82,7 @@ $title = get_field('section8', 'option');
                 </div>
                 <div class="col-7 col-md-8 d-flex flex-column justify-content-center">
                   <div class="content-wrapper">
-                    <h4 class="title-post multi-line-1">
+                    <h4 class="title multi-line-1">
                       <a href="<?php the_permalink(); ?>"
                         class="d-block"><?php the_title(); ?></a>
                     </h4>

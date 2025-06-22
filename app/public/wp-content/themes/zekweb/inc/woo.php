@@ -50,13 +50,13 @@ add_filter( 'loop_shop_per_page', function($cols) { return 9; }, 20 );
 // Thay đổi số lượng sản phẩm liên quan
 function woo_related_products_limit() {
 global $product;
-$args['posts_per_page'] = 4;
+$args['posts_per_page'] = 6;
 return $args;
 }
 add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_args' );
 function jk_related_products_args( $args ) {
-$args['posts_per_page'] = 4; // 4 related products
-$args['columns'] = 4; // arranged in 4 columns
+$args['posts_per_page'] = 6; // 6 related products
+$args['columns'] = 3; // arranged in 3 columns
 return $args;
 }
 add_filter('woocommerce_sale_flash','devvn_woocommerce_sale_flash', 10, 3);

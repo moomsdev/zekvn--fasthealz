@@ -19,13 +19,13 @@
         echo '<h2 class="title text-primary text-uppercase">' . esc_html($title) . '</h2>';
       endif;
     ?>
-      <div class="row justify-content-center">
+      <div class="row">
         <?php
         $loop = new WP_Query($args);
         if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post();
           global $product;
         ?>
-          <div class="col-6 col-md-4 product-item woocommerce">
+          <div class="col-6 col-md-4 product-item woocommerce h-100 d-flex flex-column">
               <div class="product-image">
                 <figure>
                   <a href="<?= $product->get_permalink(); ?>">
@@ -34,9 +34,9 @@
                 </figure>
               </div>
 
-              <div class="info">
-                <h3>
-                  <a class="product-title multi-line-2 text-center" href="<?= $product->get_permalink(); ?>"><?= $product->get_name(); ?></a>
+              <div class="info flex-grow-1 d-flex flex-column justify-content-between">
+                <h3 class="title multi-line-2">
+                  <a href="<?= $product->get_permalink(); ?>"><?= $product->get_name(); ?></a>
                 </h3>
 
                 <div class="product-price text-center">
@@ -44,7 +44,7 @@
                 </div>
               </div>
 
-              <div class="action d-flex justify-content-center gap-4">
+              <div class="action d-flex justify-content-center gap-4 mt-auto">
                 <!-- Add to cart -->
                 <?php $product_id = $product->get_id(); ?>
                 <a href="?add-to-cart=<?php echo $product_id; ?>" 

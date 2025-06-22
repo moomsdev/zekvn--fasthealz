@@ -113,25 +113,19 @@
      */
     function initSliders() {
         // Banner slider
-        new Swiper(".swiper-banner", {
-            loop: true,
-            autoplay: {delay: 6000},
-            speed: 500,
-            pagination: {
-                el: ".banner-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".banner-next",
-                prevEl: ".banner-prev",
-            },
-            breakpoints: {
-                0: {slidesPerView: 1},
-                429: {slidesPerView: 1},
-                575: {slidesPerView: 1},
-                768: {slidesPerView: 1},
-                992: {slidesPerView: 1}
-            },
+        new Swiper(".swiper-banner-home", {
+          loop: true,
+          speed: 1000,
+          slidesPerView: 1,
+          spaceBetween: 30,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
         });
 
         // Testimonials slider

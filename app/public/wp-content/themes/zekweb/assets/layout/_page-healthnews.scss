@@ -6,25 +6,35 @@
         margin-bottom: 15px;
     }
 
-    .title {
-        font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-        margin-bottom: clamp(1rem, 2.5vw, 2rem);
-
-        @include mediaMaxWidth(992px) {
-            margin-top: clamp(1rem, 2.5vw, 2rem);
-        }
-    }
-    
     img {
         aspect-ratio: 156/105;
     }
 }
 
 .category  {
-    .first-post {
-        img {
-            margin-bottom: clamp(1rem, 2.5vw, 2rem);
-            aspect-ratio: 439/290;
+  .first-post {
+      img {
+        aspect-ratio: 439/290;
+      }
+
+      .title {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    
+        @include mediaMaxWidth($md) {
+          margin-top: 1.5rem;
         }
+      }
+  }
+
+  .title {
+    @include mediaMaxWidth($xl) {
+      margin-top: 1.5rem;
     }
+
+    @include mediaMaxWidth($lg) {
+      margin-top: 1rem;
+    }
+
+  }
 }

@@ -3,9 +3,12 @@
 
 .loop-post {
   figure {
-    margin-bottom: clamp(1rem, 2.5vw, 2rem);
+    margin-bottom: 2rem;
     border-radius: 3rem;
     overflow: hidden;
+    @include mediaMaxWidth($lg) {
+      margin-bottom: 1rem;
+    }
 
     img {
       width: 100%;
@@ -22,8 +25,11 @@
   }
 
   .title {
-    margin-bottom: clamp(1rem, 2.5vw, 2rem);
-    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    margin-bottom: 2rem;
+
+    @include mediaMaxWidth($lg) {
+      margin-bottom: 1rem;
+    }
   }
 
   &.ratio-3-2 {

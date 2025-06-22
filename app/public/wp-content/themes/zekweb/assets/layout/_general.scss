@@ -20,9 +20,11 @@ html {
 
 body {
   font-family: $primaryFont;
-  font-size: clamp(1.6rem, 2.5vw, 1.8rem);
   line-height: 1.5;
   color: $greyColor;
+  font-weight: 400;
+
+  @include resFont(1.6, 1.8);
 }
 
 ::-webkit-scrollbar {
@@ -125,18 +127,18 @@ p:empty {
 .heading,
 .woocommerce-products-header__title.page-title {
   margin-bottom: 3rem;
-  font-size: clamp(2.4rem, 2.5vw, 3.2rem);
   font-weight: 700;
   text-transform: uppercase;
   color: $primaryColor;
+  @include resFont(2.4, 3.2);
 }
 
 .heading-orange {
   margin-bottom: 3rem;
-  font-size: clamp(2.4rem, 2.5vw, 3.2rem);
   font-weight: 700;
   text-transform: uppercase;
   color: $orangeColor;
+  @include resFont(2.4, 3.2);
 
   a {
     color: $orangeColor;
@@ -149,12 +151,16 @@ p:empty {
 
 .title {
   margin: 0 auto 2rem;
-  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
-  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+  margin-bottom: 1.5rem;
   font-weight: 600;
   line-height: 1.2;
   text-align: center;
   color: $greyColor;
+  @include resFont(1.8, 2.4);
+
+  @include mediaMaxWidth($lg) {
+    margin-bottom: 1rem;
+  }
 
   a:hover {
     color: $primaryColor;
@@ -163,15 +169,7 @@ p:empty {
 
 .description {
   margin-bottom: 2rem;
-  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
-  font-weight: 400;
-  line-height: 1.2;
-  color: $greyColor;
   text-align: justify;
-
-  &.fs-2 {
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-  }
 }
 
 .image {
@@ -195,9 +193,9 @@ figure {
 
 .title-orange {
   margin-bottom: 2rem;
-  font-size: clamp(2.4rem, 3vw, 3.2rem);
   font-weight: 700;
   color: $orangeColor;
+  @include resFont(2.4, 3.2);
 }
 
 .orange-color {
@@ -221,14 +219,14 @@ figure {
   .price {
     span.woocommerce-Price-amount,
     span.woocommerce-Price-currencySymbol {
-      font-size: clamp(2rem, 2.5vw, 4rem);
       color: $orangeColor;
+      @include resFont(2.4, 4);
     }
 
     span {
       color: #000;
-      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
       font-weight: 600;
+      @include resFont(1.8, 2.4);
     }
   }
 
@@ -245,7 +243,6 @@ figure {
 }
 
 .pre-next-post h3 a {
-  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
   font-weight: 600;
   color: $orangeColor;
 
@@ -254,6 +251,39 @@ figure {
   }
 }
 
+.related-posts {
+  .related-post {
+    figure {
+      position: relative;
+      height: auto;
+      overflow: hidden;
+      border-radius: 2rem;
+
+      img {
+        aspect-ratio: 134/100;
+        object-fit: cover;
+        object-position: center;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .title {
+      margin-top: 1rem;
+      padding: 0;
+      text-align: start;
+      @include mediaMaxWidth($md) {
+        margin-top: 0.5rem;
+      }
+
+      a:hover {
+        color: $primaryColor;
+      }
+    }
+  }
+}
 
 .banner-single figure img {
   max-height: 500px;

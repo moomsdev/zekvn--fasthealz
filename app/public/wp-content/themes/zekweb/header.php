@@ -38,6 +38,7 @@
 	echo $value;
 	
 	$sublogo = get_field('sublogo', 'option');
+  $banner = get_field('banner_home', 'option');
 	?>
 
 	<div id="zek-web">
@@ -52,8 +53,8 @@
 			<div class="header-main">
 				<div class="container">
 					<div class="row pt-4 pb-4">
-						<div class="col-md-6 col-left d-flex align-items-center">
-							<div id="touch-menu" class="touch-menu d-block d-md-none">
+						<div class="col-lg-6 col-left d-flex align-items-center">
+							<div id="touch-menu" class="touch-menu d-block d-lg-none">
 							</div>
 							<?php if($sublogo){ ?>
 							<div class="sublogo d-none d-md-block">
@@ -67,17 +68,19 @@
 								</a>
 							</div>
 
-							<div class="slogan d-none d-md-block">
+							<div class="slogan d-none d-lg-block">
 								<?php the_field('slogan', 'option'); ?>
 							</div>
 						</div>
 
-						<div class="col-md-6 col-right d-none d-md-flex">
+						<div class="col-md-6 col-right d-none d-lg-flex">
 							<div class="search">
 								<form role="search" method="get" autocomplete="off" class="woocommerce-product-search" action="<?php echo esc_url(home_url('/')); ?>">
 									<label class="screen-reader-text" for="woocommerce-product-search-field-<?php echo isset($index) ? absint($index) : 0; ?>"><?php esc_html_e('Search for:', 'woocommerce'); ?></label>
 									<input type="search" id="woocommerce-product-search-field-<?php echo isset($index) ? absint($index) : 0; ?>" class="search-input" placeholder="<?php echo esc_attr__('Nhập tìm kiếm&hellip;', 'woocommerce'); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-									<button type="submit" value="<?php echo esc_attr_x('Search', 'submit button', 'woocommerce'); ?>" class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+									<button type="submit" value="<?php echo esc_attr_x('Search', 'submit button', 'woocommerce'); ?>" class="search-submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+                  </button>
 									<input type="hidden" name="post_type" value="product" />
 								</form>
 							</div>
@@ -89,7 +92,7 @@
 								?>
 								<?php if($hotline) : ?>	
 									<div class="hotline">
-										<i class="fa-solid fa-phone-volume"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M280 0C408.1 0 512 103.9 512 232c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-101.6-82.4-184-184-184c-13.3 0-24-10.7-24-24s10.7-24 24-24zm8 192a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm-32-72c0-13.3 10.7-24 24-24c75.1 0 136 60.9 136 136c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-48.6-39.4-88-88-88c-13.3 0-24-10.7-24-24zM117.5 1.4c19.4-5.3 39.7 4.6 47.4 23.2l40 96c6.8 16.3 2.1 35.2-11.6 46.3L144 207.3c33.3 70.4 90.3 127.4 160.7 160.7L345 318.7c11.2-13.7 30-18.4 46.3-11.6l96 40c18.6 7.7 28.5 28 23.2 47.4l-24 88C481.8 499.9 466 512 448 512C200.6 512 0 311.4 0 64C0 46 12.1 30.2 29.5 25.4l88-24z"/></svg>
 										<a href="tel:<?php echo str_replace(['.', ',', ' '], '', $hotline); ?>">
 											<?php echo 'Hotline ' . $hotline; ?>
 										</a>
@@ -112,7 +115,7 @@
 						</div>
 					</div>
 
-					<div class="main-menu full-width d-none d-md-block">
+					<div class="main-menu full-width d-none d-lg-block">
 						<div class="container">
 							<?php
 							wp_nav_menu(['container' => '', 'theme_location' => 'main', 'menu_class' => 'menu']);
@@ -123,13 +126,33 @@
 			</div>
 			<?php
 			if (is_home() || is_front_page()) :
+				if (!empty($banner) && is_array($banner)) :
 			?>
 				<section class="section-banner">
-					<figure class="media">
-						<img src="<?= get_field('banner_home', 'option') ?>" alt="">
-					</figure>
-				</section>
-			<?php endif; ?>
+          <div class="swiper swiper-banner-home">
+            <div class="swiper-wrapper">
+              <?php
+              $i = 0;
+              foreach ($banner as $image):
+              ?>
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="<?= $image['image'] ?>" alt="banner-<?= $i ?>">
+                  </figure>
+                </div>
+              <?php 
+                $i++;
+              endforeach;
+              ?>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+			<?php 
+				endif;
+			endif; 
+			?>
 		</header>
 
 		<div id="menu-mobile">

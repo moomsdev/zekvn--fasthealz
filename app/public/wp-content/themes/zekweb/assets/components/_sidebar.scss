@@ -29,7 +29,6 @@
 
     ul li {
       list-style-type: none;
-      font-size: 1.6rem;
 
       &:not(:last-child) {
         margin-bottom: 1rem;
@@ -37,6 +36,12 @@
       
       a:hover {
         color: $primaryColor !important;
+      }
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: $primaryColor;
       }
     }
 

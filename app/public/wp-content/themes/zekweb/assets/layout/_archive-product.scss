@@ -44,15 +44,15 @@
 }
 
 .product-price {
-  font-size: 2.4rem;
   font-weight: 700;
   color: $primaryColor;
+
+  @include resFont(1.8, 2.4);
 }
 
 .product-looknow {
   padding: .5rem 3rem;
   width: 100%;
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
   font-weight: 600;
   line-height: 1.2;
   text-align: center;
@@ -61,6 +61,7 @@
   background-color: $primaryColor;
   border: none;
   outline: none;
+  @include resFont(1.4, 2);
 
   &:hover {
     background-color: $primaryColor;

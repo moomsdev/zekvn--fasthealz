@@ -45,7 +45,7 @@ $videos = get_field('video');
                           <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
                         </figure>
                       </a>
-                      <h3 class="title multi-line-1 text-start mx-0 w-100">
+                      <h3 class="title multi-line-2 text-start mx-0 w-100">
                           <a href="<?php the_permalink(); ?>" class="d-block"><?php the_title();?></a>
                       </h3>
                       <div class="description multi-line-3 mb-0">
@@ -78,7 +78,7 @@ $videos = get_field('video');
                         <?php
                         echo '<div class="video-thumbnail" data-video="' . esc_url($embed_url) . '">';
                         echo '<img src="https://img.youtube.com/vi/' . getYoutubeVideoId($video) . '/maxresdefault.jpg" alt="Video thumbnail" class="img-fluid">';
-                        echo '<div class="play-button"><i class="fas fa-play"></i></div>';
+                        echo '<div class="play-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></div>';
                         echo '</div>';
                         ?>
                       </div>

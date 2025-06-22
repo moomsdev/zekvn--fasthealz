@@ -46,13 +46,13 @@
 
                     <div class="row mt-5 related-posts">
                         <div class="col-12">
-                            <h3>Bài viết liên quan</h3>
-                            <ul>
+                            <h2 class="title text-primary text-uppercase">Bài viết liên quan</h2>
+                            <div class="row">
                                 <?php
                                 $categories = wp_get_post_categories(get_the_ID());
                                 $args = array(
                                     'post_type' => 'post',
-                                    'posts_per_page' => 5,
+                                    'posts_per_page' => 6,
                                     'post__not_in' => array(get_the_ID()),
                                     'orderby' => 'date',
                                     'order' => 'DESC',
@@ -63,17 +63,24 @@
                                 if ($related_posts->have_posts()) :
                                     while ($related_posts->have_posts()) : $related_posts->the_post();
                                 ?>
-                                        <li class="multi-line-1">
-                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                        </li>
+                                    <div class="col-6 col-lg-4 related-post">
+                                      <figure>
+                                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
+                                      </figure>
+                                      <h3 class="title multi-line-2">
+                                        <a href="<?php the_permalink(); ?>">
+                                          <?php the_title(); ?>
+                                        </a>
+                                      </h3>
+                                    </div>
                                 <?php
                                     endwhile;
                                     wp_reset_postdata();
                                 else :
-                                    echo '<li>Không có bài viết liên quan.</li>';
+                                    echo '<p>Không có bài viết liên quan.</p>';
                                 endif;
                                 ?>
-                            </ul>
+                            </div>
                         </div>
                     </div>
 

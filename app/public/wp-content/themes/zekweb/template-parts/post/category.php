@@ -20,7 +20,7 @@ $banner =  get_field('category_image', $term);
                   <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
                 </figure>
               </a>
-              <h3 class="title multi-line-1 text-start mx-0 w-100">
+              <h3 class="title multi-line-2 text-start mx-0 w-100">
                   <a href="<?php the_permalink(); ?>" class="d-block"><?php the_title();?></a>
               </h3>
               <div class="description multi-line-3 mb-0">

@@ -135,6 +135,22 @@ function filter_ptags_on_images($content)
 }
 add_filter('the_content', 'filter_ptags_on_images');
 
+// Chuẩn hóa thuộc tính sizes cho hình ảnh - Apply vào nhiều filter
+function standardize_image_sizes_attribute($content) {
+    // Loại bỏ "auto, " khỏi thuộc tính sizes
+    $content = preg_replace('/sizes="auto,\s*([^"]*)"/', 'sizes="$1"', $content);
+    return $content;
+}
+add_filter('the_content', 'standardize_image_sizes_attribute', 20);
+add_filter('wp_get_attachment_image_attributes', 'remove_auto_from_sizes_attr', 10, 1);
+
+function remove_auto_from_sizes_attr($attr) {
+    if (isset($attr['sizes'])) {
+        $attr['sizes'] = preg_replace('/^auto,\s*/', '', $attr['sizes']);
+    }
+    return $attr;
+}
+
 register_nav_menu('main', 'Main');
 register_nav_menu('footer', 'Footer');
 

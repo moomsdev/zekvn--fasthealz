@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 @mixin mediaMinWidth($min-width) {
   @media only screen and (min-width: $min-width) {
     @content;
@@ -88,7 +90,7 @@
   }
 }
 
-@mixin responsive-font($min-size, $max-size, $important: false) {
+@mixin resFont($min-size, $max-size, $important: false) {
   $font-size: #{$max-size}rem;
 
   @if $important {
