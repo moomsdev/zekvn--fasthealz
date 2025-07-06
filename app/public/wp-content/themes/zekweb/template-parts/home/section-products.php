@@ -45,25 +45,8 @@
               </div>
 
               <div class="action d-flex justify-content-center gap-4 mt-auto">
-                <!-- Add to cart -->
-                <?php $product_id = $product->get_id(); ?>
-                <a href="?add-to-cart=<?php echo $product_id; ?>" 
-                  data-quantity="1" 
-                  class="button product_type_simple add_to_cart_button ajax_add_to_cart custom-add-to-cart" 
-                  data-product_id="<?php echo $product_id; ?>" 
-                  data-product_sku="<?php echo $product->get_sku(); ?>" 
-                  aria-label="Thêm sản phẩm vào giỏ hàng" 
-                  rel="nofollow">
-                  <i class="fa-solid fa-cart-shopping product-addcart__icon"></i> Thêm vào giỏ
-                </a>
-                <!-- Buy now -->
-                <?php
-                $checkout_url = wc_get_checkout_url();
-                $buy_now_url = add_query_arg(['add-to-cart' => $product_id, 'buy_now' => '1'], $checkout_url );
-                ?>
-                <a href="<?php echo esc_url($buy_now_url); ?>" class="button buy-now-button">
-                  <img src="<?php bloginfo('template_url' ); ?>/images/buy-now.png" alt="buy-now">
-                  Mua ngay
+                <a href="<?php echo esc_url($product->get_permalink()); ?>" class="button buy-now-button">
+                  Xem thông tin
                 </a>
               </div>
           </div>

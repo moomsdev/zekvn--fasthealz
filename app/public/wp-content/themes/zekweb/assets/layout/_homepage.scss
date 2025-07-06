@@ -15,7 +15,16 @@
 
 .review {
   padding: 50px 0;
-
+  .first-image {
+    img {
+      aspect-ratio: 1/1;
+    }
+  }
+  .other-images {
+    img {
+      aspect-ratio: 1/1;
+    }
+  }
   figure {
     position: relative;
     border-radius: 2rem;
@@ -23,8 +32,9 @@
     border: 1px solid $primaryColor;
     
     img {
+      aspect-ratio: 1/1;
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
     }
   }
@@ -40,6 +50,16 @@
     margin-top: 3rem;
     @include mediaMaxWidth($md) {
       margin-top: 1.6rem;
+    }
+  }
+
+  a:hover {
+    color: $greyColor;
+    .title {
+      color: $primaryColor;
+    }
+    img {
+      transform: scale(1.05);
     }
   }
 }
@@ -218,10 +238,8 @@ section {
 // section 2 - about
 .about-us {
   .video-thumbnail {
-    height: 100%;
-
     img {
-      height: 100%;
+      aspect-ratio: 16/9;
       object-fit: cover;
     }
   }
@@ -472,6 +490,7 @@ section {
 
   .description {
     margin-bottom: 0;
+    text-align: justify;
   }
 }
 

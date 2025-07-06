@@ -98,19 +98,6 @@
 										</a>
 									</div>
 								<?php endif; ?>
-								
-								<div class="page-link">
-									<?php
-									$point_of_sale = get_field('point_of_sale', 'option');
-									$checkout = get_field('checkout', 'option');
-									if ($point_of_sale) :
-										echo '<a class="button rdu-2 btn-orange" href="' . $point_of_sale . '">' . esc_html__('Điểm bán', 'zekweb') . '</a>';
-									endif;
-									if ($checkout) :
-										echo '<a class="button rdu-2 btn-red" href="' . $checkout . '">' . esc_html__('Đặt hàng', 'zekweb') . '</a>';
-									endif;
-									?>
-								</div>
 							</div>
 						</div>
 					</div>

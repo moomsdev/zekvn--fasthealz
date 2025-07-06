@@ -83,7 +83,7 @@ h6{font-size: 14px;}
 	.container, .container-lg, .container-md, .container-sm, .container-xl {max-width: 1200px;}
 }
 @media (min-width: 1400px){
-	.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {max-width: 1440px;}
+	.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {max-width: 1320px;}
 }
 
 /* input-button */

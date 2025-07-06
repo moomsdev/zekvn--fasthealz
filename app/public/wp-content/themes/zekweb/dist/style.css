@@ -678,10 +678,12 @@ header .info .hotline {
 }
 header .info .hotline a {
   color: #045595;
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 header .info .hotline svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2.3rem;
+  height: 2.3rem;
   fill: #045595;
 }
 header .info .page-link {
@@ -1274,14 +1276,23 @@ figure img {
 .review {
   padding: 50px 0;
 }
+.review .first-image img {
+  aspect-ratio: 1/1;
+}
+.review .other-images img {
+  aspect-ratio: 1/1;
+}
 .review figure {
   position: relative;
   border-radius: 2rem;
   overflow: hidden;
   border: 1px solid #045595;
 }
+.review figure img {
+  aspect-ratio: 1/1;
+}
 .review figure img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .review .profile figure {
   border-radius: 50%;
@@ -1294,6 +1305,15 @@ figure img {
   .review .title {
     margin-top: 1.6rem;
   }
+}
+.review a:hover {
+  color: #363636;
+}
+.review a:hover .title {
+  color: #045595;
+}
+.review a:hover img {
+  transform: scale(1.05);
 }
 
 .btn-home {
@@ -1448,11 +1468,8 @@ section.section-banner img {
   }
 }
 
-.about-us .video-thumbnail {
-  height: 100%;
-}
 .about-us .video-thumbnail img {
-  height: 100%;
+  aspect-ratio: 16/9;
   object-fit: cover;
 }
 
@@ -1678,6 +1695,7 @@ section.section-banner img {
 }
 .latest-posts .description {
   margin-bottom: 0;
+  text-align: justify;
 }
 
 .partners figure {

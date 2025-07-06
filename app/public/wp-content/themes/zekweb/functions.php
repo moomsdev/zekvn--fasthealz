@@ -846,10 +846,17 @@ function getYoutubeEmbedUrl($url) {
     else if (strpos($url, 'youtu.be/') !== false) {
         $video_id = explode('youtu.be/', $url)[1];
     }
+    // Kiểm tra nếu URL dạng YouTube Shorts
+    else if (strpos($url, '/shorts/') !== false) {
+        $video_id = explode('/shorts/', $url)[1];
+    }
     
-    // Xử lý thêm nếu có các tham số phụ (&)
+    // Xử lý thêm nếu có các tham số phụ (&, ?)
     if (strpos($video_id, '&') !== false) {
         $video_id = explode('&', $video_id)[0];
+    }
+    if (strpos($video_id, '?') !== false) {
+        $video_id = explode('?', $video_id)[0];
     }
     
     return 'https://www.youtube.com/embed/' . $video_id . '?autoplay=1&mute=1&rel=0&modestbranding=1';
@@ -857,7 +864,8 @@ function getYoutubeEmbedUrl($url) {
 
 function getYoutubeVideoId($url) {
     $video_id = '';
-    $pattern = '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i';
+    // Pattern cải tiến để hỗ trợ YouTube Shorts và các format khác
+    $pattern = '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i';
     if (preg_match($pattern, $url, $match)) {
         $video_id = $match[1];
     }

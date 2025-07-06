@@ -155,8 +155,8 @@
             },
             breakpoints: {
                 0: {slidesPerView: 2, spaceBetween: 20},
-                575: {slidesPerView: 2, spaceBetween: 50},
-                992: {slidesPerView: 3, spaceBetween: 80}
+                575: {slidesPerView: 2, spaceBetween: 30},
+                1199: {slidesPerView: 3, spaceBetween: 50}
             },
         });
 
@@ -247,26 +247,182 @@
 
     /**
      * Video Modal Functionality
-     * Handles video modal functionality
+     * Handles video modal functionality for Bootstrap 5.2.2
+     * Fixed: Modal instance conflicts after closing
      */
     function initVideoModal() {
-        // Initialize video modal
-        $('.video-thumbnail').click(function() {
-            var videoUrl = $(this).data('video');
-            $('#videoModal iframe').attr('src', videoUrl);
-            $('#videoModal').modal('show');
-            });
+        let currentModalInstance = null; // Track current modal instance
+        
+        function showVideoModal(videoUrl) {
+            console.log('Attempting to show video modal:', videoUrl);
             
-            // Sửa lại event close modal
-            $('.close, #videoModal').on('click', function () {
-            $('#videoModal iframe').attr('src', '');
-            $('#videoModal').modal('hide');
-            });
+            if (!videoUrl) {
+                console.error('No video URL provided');
+                return;
+            }
             
-            // Ngăn modal đóng khi click vào video
-        $('.modal-content').on('click', function (e) {
-            e.stopPropagation();
+            const modal = document.getElementById('videoModal');
+            const iframe = modal ? modal.querySelector('iframe') : null;
+            
+            if (!modal || !iframe) {
+                console.error('Video modal or iframe not found');
+                return;
+            }
+            
+            // Dispose any existing modal instance first
+            if (currentModalInstance) {
+                try {
+                    currentModalInstance.dispose();
+                    console.log('Previous modal instance disposed');
+                } catch (error) {
+                    console.warn('Error disposing previous modal:', error);
+                }
+                currentModalInstance = null;
+            }
+            
+            // Reset modal state
+            modal.classList.remove('show');
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+            
+            // Remove any existing backdrop
+            const existingBackdrop = document.querySelector('.modal-backdrop');
+            if (existingBackdrop) {
+                existingBackdrop.remove();
+            }
+            
+            // Set video URL
+            iframe.src = videoUrl;
+            console.log('Set iframe src:', videoUrl);
+            
+            // Wait a bit for cleanup, then show modal
+            setTimeout(() => {
+                // Try Bootstrap 5 API first
+                if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+                    try {
+                        currentModalInstance = new bootstrap.Modal(modal, {
+                            backdrop: true,
+                            keyboard: true,
+                            focus: true
+                        });
+                        currentModalInstance.show();
+                        console.log('Modal shown with Bootstrap 5 API');
+                        return;
+                    } catch (error) {
+                        console.error('Bootstrap 5 Modal error:', error);
+                        currentModalInstance = null;
+                    }
+                }
+                
+                // Fallback to jQuery if Bootstrap API fails
+                if (typeof $ !== 'undefined' && $.fn.modal) {
+                    try {
+                        $(modal).modal('show');
+                        console.log('Modal shown with jQuery/Bootstrap 4 fallback');
+                        return;
+                    } catch (error) {
+                        console.error('jQuery Modal error:', error);
+                    }
+                }
+                
+                console.error('No working modal API found');
+            }, 100);
+        }
+        
+        function cleanupModal() {
+            console.log('Cleaning up modal');
+            const modal = document.getElementById('videoModal');
+            const iframe = modal ? modal.querySelector('iframe') : null;
+            
+            // Stop video
+            if (iframe) {
+                iframe.src = '';
+            }
+            
+            // Dispose modal instance
+            if (currentModalInstance) {
+                try {
+                    currentModalInstance.dispose();
+                    console.log('Modal instance disposed on cleanup');
+                } catch (error) {
+                    console.warn('Error disposing modal on cleanup:', error);
+                }
+                currentModalInstance = null;
+            }
+            
+            // Ensure modal is properly hidden
+            if (modal) {
+                modal.classList.remove('show');
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
+            }
+            
+            // Clean up body classes and backdrop
+            document.body.classList.remove('modal-open');
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+                backdrop.remove();
+            }
+        }
+        
+        // Wait for DOM and all scripts to load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Video modal init - DOM ready');
+            
+            // Check Bootstrap availability
+            if (typeof bootstrap !== 'undefined') {
+                console.log('Bootstrap 5 object available');
+            } else if (typeof $ !== 'undefined' && $.fn.modal) {
+                console.log('jQuery Bootstrap available (fallback)');
+            } else {
+                console.warn('No Bootstrap modal API detected');
+            }
         });
+        
+        // Use event delegation for dynamic content
+        $(document).on('click', '.video-thumbnail', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const videoUrl = $(this).data('video') || $(this).attr('data-video');
+            console.log('Video thumbnail clicked (jQuery):', videoUrl);
+            showVideoModal(videoUrl);
+        });
+        
+        // Also add vanilla JS event delegation as backup
+        document.addEventListener('click', function(e) {
+            const thumbnail = e.target.closest('.video-thumbnail');
+            if (thumbnail) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const videoUrl = thumbnail.getAttribute('data-video');
+                console.log('Video thumbnail clicked (vanilla JS):', videoUrl);
+                showVideoModal(videoUrl);
+            }
+        });
+        
+        // Modal close event handling
+        const videoModal = document.getElementById('videoModal');
+        if (videoModal) {
+            // Bootstrap 5 events
+            videoModal.addEventListener('hidden.bs.modal', function () {
+                console.log('Modal closed (BS5), cleaning up');
+                cleanupModal();
+            });
+            
+            // Bootstrap 4/jQuery events fallback
+            $(videoModal).on('hidden.bs.modal', function () {
+                console.log('Modal closed (jQuery), cleaning up');
+                cleanupModal();
+            });
+            
+            // Handle ESC key and backdrop clicks
+            videoModal.addEventListener('hide.bs.modal', function () {
+                console.log('Modal hiding...');
+            });
+        }
     }
 
     // Initialize all functionality
