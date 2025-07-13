@@ -1243,6 +1243,17 @@ figure img {
   margin-top: 1rem;
   padding: 0;
   text-align: start;
+  font-size: 2.2rem;
+}
+@media only screen and (max-width: 992px) {
+  .related-posts .related-post .title {
+    font-size: calc(2.2rem - (2.2rem - 1.6rem) / 2);
+  }
+}
+@media only screen and (max-width: 576px) {
+  .related-posts .related-post .title {
+    font-size: 1.6rem;
+  }
 }
 @media only screen and (max-width: 768px) {
   .related-posts .related-post .title {
@@ -1261,6 +1272,10 @@ figure img {
   text-align: justify;
 }
 
+.content-single ul {
+  padding-left: 2rem;
+}
+
 .bg-color {
   background-color: #f5f5f5;
 }
@@ -1276,8 +1291,19 @@ figure img {
 .review {
   padding: 50px 0;
 }
+.review .first-image {
+  height: 100%;
+}
 .review .first-image img {
-  aspect-ratio: 1/1;
+  aspect-ratio: unset;
+}
+@media only screen and (max-width: 768px) {
+  .review .first-image {
+    height: auto;
+  }
+  .review .first-image img {
+    aspect-ratio: 1/1;
+  }
 }
 .review .other-images img {
   aspect-ratio: 1/1;
@@ -1295,6 +1321,8 @@ figure img {
   transform: scale(1.05);
 }
 .review .profile figure {
+  margin: 0 auto;
+  max-width: 70%;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -1488,6 +1516,7 @@ section.section-banner img {
 .section-products .product-item .title {
   margin-top: 1.5rem;
   padding: 0 1rem;
+  min-height: 5.3rem;
 }
 @media only screen and (max-width: 768px) {
   .section-products .product-item .title {
@@ -1679,7 +1708,6 @@ section.section-banner img {
 }
 .latest-posts .title {
   text-align: start;
-  margin-bottom: 0;
 }
 .latest-posts .title a:hover {
   color: #045595;

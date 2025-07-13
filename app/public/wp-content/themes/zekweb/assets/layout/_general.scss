@@ -274,6 +274,8 @@ figure {
       margin-top: 1rem;
       padding: 0;
       text-align: start;
+
+      @include resFont(1.6, 2.2);
       @include mediaMaxWidth($md) {
         margin-top: 0.5rem;
       }
@@ -291,4 +293,10 @@ figure {
 
 .content-single > * {
   text-align: justify;
+}
+
+.content-single {
+  ul {
+    padding-left: 2rem;
+  }
 }

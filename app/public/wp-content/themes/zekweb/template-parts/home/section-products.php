@@ -36,7 +36,7 @@
 
               <div class="info flex-grow-1 d-flex flex-column justify-content-between">
                 <h3 class="title multi-line-2">
-                  <a href="<?= $product->get_permalink(); ?>"><?= $product->get_name(); ?></a>
+                  <a class="multi-line-2" href="<?= $product->get_permalink(); ?>"><?= $product->get_name(); ?></a>
                 </h3>
 
                 <div class="product-price text-center">

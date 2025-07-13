@@ -21,7 +21,7 @@ $list = $testimonials[0]['list'];
         foreach ($gallery as $index => $image) :
           // Fisrt image
           if ($index === 0):
-            echo '<div class="col-12 col-md-6 mb-5 mb-md-0 first-image">
+            echo '<div class="col-12 col-md-4 mb-5 mb-md-0 first-image">
                     <figure>
                       <img src="' . esc_url($image) . '" alt="" class="image">
                     </figure>
@@ -30,12 +30,12 @@ $list = $testimonials[0]['list'];
         endforeach;
         ?>
 
-        <div class="col-12 col-md-6 other-images">
+        <div class="col-12 col-md-8 other-images">
           <div class="row g-5">
             <?php
             foreach ($gallery as $index => $image) :
               if ($index !== 0):
-                echo '<div class="col-6">
+                echo '<div class="col-6 col-md-4">
                         <figure>
                           <img src="' . esc_url($image) . '" alt="" class="image">
                         </figure>

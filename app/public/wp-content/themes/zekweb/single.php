@@ -16,37 +16,9 @@
 
                     <?php echo do_shortcode('[cusrev_reviews]'); ?>
 
-                    <div class="row mt-5 pre-next-post">
-                        <?php
-                        $prev_post = get_previous_post();
-                        $next_post = get_next_post();
-                        ?>
-                        <!-- Previous Post -->
-                        <div class="col-6">
-                            <?php if (!empty($prev_post)): ?>
-                                <h3>
-                                    <a href="<?php echo get_permalink($prev_post->ID); ?>">
-                                        << <?php echo get_the_title($prev_post->ID); ?>
-                                    </a>
-                                </h3>
-                            <?php endif; ?>
-                        </div>
-
-                        <!-- Next Post -->
-                        <div class="col-6 text-end">
-                            <?php if (!empty($next_post)): ?>
-                                <h3>
-                                    <a href="<?php echo get_permalink($next_post->ID); ?>">
-                                        <?php echo get_the_title($next_post->ID); ?> >>
-                                    </a>
-                                </h3>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-
                     <div class="row mt-5 related-posts">
                         <div class="col-12">
-                            <h2 class="title text-primary text-uppercase">Bài viết liên quan</h2>
+                            <h2 class="title text-primary text-uppercase text-start">Bài viết liên quan</h2>
                             <div class="row">
                                 <?php
                                 $categories = wp_get_post_categories(get_the_ID());

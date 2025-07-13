@@ -24,7 +24,8 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<div class="col-6 col-md-4 mb-5" <?php wc_product_class( 'product-item', $product ); ?>>
+<div class="col-6 col-md-4 mb-5 d-flex" <?php wc_product_class( 'product-item', $product ); ?>>
+	<div class="d-flex flex-column w-100">
 		<div class="product-image">
 			<?php the_post_thumbnail('large', array('alt'   => trim(strip_tags( $post->post_title )),'title' => trim(strip_tags( $post->post_title )),)); ?>
 			<?php $product_id = $product->get_id(); ?>
@@ -53,10 +54,11 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 			}
 		?>
 		
-		<div class="product-bottom flex-wrap flex-lg-nowrap">
+		<div class="product-bottom flex-wrap flex-lg-nowrap mt-auto">
 				<div class="product-price"><?php echo $product->get_price_html(); ?></div>
 				<a href="<?php the_permalink()?>">
-					<button class="btn btn-primary product-looknow">Xem ngay</button>
+					<button class="btn btn-primary product-looknow">Xem thông tin</button>
 				</a>
 		</div>
+	</div>
 </div>

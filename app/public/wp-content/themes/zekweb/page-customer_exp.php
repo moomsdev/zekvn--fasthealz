@@ -74,7 +74,7 @@ $videos = get_field('video');
 
                       if ($video) :
                     ?>
-                      <div class="col-6 mb-5">
+                      <div class="col-6 col-md-4 mb-5">
                         <?php
                         echo '<div class="video-thumbnail" data-video="' . esc_url($embed_url) . '">';
                         echo '<img src="https://img.youtube.com/vi/' . getYoutubeVideoId($video) . '/maxresdefault.jpg" alt="Video thumbnail" class="img-fluid">';

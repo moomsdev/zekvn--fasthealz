@@ -6,7 +6,7 @@ $title = get_field('section8', 'option');
   <div class="container">
     <?php
     if ($title):
-      echo '<h2 class="title text-primary text-uppercase">' . esc_html($title) . '</h2>';
+      echo '<h2 class="title text-primary text-center text-uppercase">' . esc_html($title) . '</h2>';
     endif;
     ?>
 

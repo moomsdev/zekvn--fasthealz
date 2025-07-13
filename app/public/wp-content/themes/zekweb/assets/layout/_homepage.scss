@@ -16,8 +16,16 @@
 .review {
   padding: 50px 0;
   .first-image {
+    height: 100%;
     img {
-      aspect-ratio: 1/1;
+      aspect-ratio: unset;
+    }
+
+    @include mediaMaxWidth($md) {
+      height: auto;
+      img {
+        aspect-ratio: 1/1;
+      }
     }
   }
   .other-images {
@@ -41,6 +49,8 @@
 
   .profile {
     figure {
+      margin: 0 auto;
+      max-width: 70%;
       border-radius: 50%;
       overflow: hidden;
     }
@@ -261,6 +271,7 @@ section {
     .title {
       margin-top: 1.5rem;
       padding: 0 1rem;
+      min-height: 5.3rem;
       @include mediaMaxWidth($md) {
         margin-top: 1rem;
       }
@@ -472,7 +483,7 @@ section {
 
   .title {
     text-align: start;
-    margin-bottom: 0;
+    // margin-bottom: 0;
 
     a:hover {
       color: $primaryColor;
