@@ -1243,11 +1243,12 @@ figure img {
   margin-top: 1rem;
   padding: 0;
   text-align: start;
-  font-size: 2.2rem;
+  font-weight: 500;
+  font-size: 2rem;
 }
 @media only screen and (max-width: 992px) {
   .related-posts .related-post .title {
-    font-size: calc(2.2rem - (2.2rem - 1.6rem) / 2);
+    font-size: calc(2rem - (2rem - 1.6rem) / 2);
   }
 }
 @media only screen and (max-width: 576px) {
@@ -1274,6 +1275,21 @@ figure img {
 
 .content-single ul {
   padding-left: 2rem;
+}
+
+h1.title-single.orange-color {
+  font-weight: 700;
+  font-size: 3.2rem;
+}
+@media only screen and (max-width: 992px) {
+  h1.title-single.orange-color {
+    font-size: calc(3.2rem - (3.2rem - 2rem) / 2);
+  }
+}
+@media only screen and (max-width: 576px) {
+  h1.title-single.orange-color {
+    font-size: 2rem;
+  }
 }
 
 .bg-color {
@@ -1445,20 +1461,19 @@ section.section-banner img {
   justify-content: space-between;
 }
 .section-feature .feature__inner .title {
-  margin: 0 auto;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.5rem;
+  text-align: start;
   font-weight: 600;
   color: #fff;
 }
 @media only screen and (max-width: 992px) {
   .section-feature .feature__inner .title {
-    margin-bottom: 0.8rem;
+    margin-bottom: 2rem;
   }
 }
 .section-feature .feature__inner .feature__description {
   margin-bottom: 2.5rem;
   display: grid;
-  align-items: center;
   grid-template-columns: 1fr 3fr;
   gap: 1.7rem;
 }

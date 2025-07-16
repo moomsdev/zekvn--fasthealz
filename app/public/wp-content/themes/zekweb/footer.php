@@ -16,6 +16,7 @@ $shopeeShop = $shopOnline['shopee'];
 ?>
             <?php 
                 get_template_part('template-parts/form-product');
+                get_template_part('template-parts/home/section-banner-2');
             ?>
             <footer id="footer">
                 <div class="container">

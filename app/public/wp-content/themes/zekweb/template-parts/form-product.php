@@ -1,7 +1,12 @@
 <?php
 /* Template Name: Mua Hàng Nhanh */
 get_header();
+
+$showForm = get_field('product_form_show', 'option');
+
 ?>
+
+<?php if ($showForm == 'yes') : ?>
 <section class="quickbuy full-width">
     <div class="container">
         <h3 class="quickbuy-title">Fasthealz có mặt các Bệnh viện, Phòng khám, Nhà thuốc trên toàn quốc</h3>
@@ -36,4 +41,5 @@ get_header();
         </div>
     </div>
 </section>
+<?php endif; ?>
 <?php get_footer(); ?>

@@ -274,8 +274,8 @@ figure {
       margin-top: 1rem;
       padding: 0;
       text-align: start;
-
-      @include resFont(1.6, 2.2);
+      font-weight: 500;
+      @include resFont(1.6, 2);
       @include mediaMaxWidth($md) {
         margin-top: 0.5rem;
       }
@@ -299,4 +299,9 @@ figure {
   ul {
     padding-left: 2rem;
   }
+}
+
+h1.title-single.orange-color {
+  font-weight: 700;
+  @include resFont(2, 3.2);
 }
